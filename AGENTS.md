@@ -1,8 +1,8 @@
 # Rain Info : versions autorisées
 
 - Dépôt connu : `itshnaya/rain-info-landing`, branche `main`. Publication GitHub Pages depuis la racine.
-- Version Maison et Jardin actuelle : `/`, `index.html`, `paiement.html`, `assets/`. Usages : arrosage, tonte, plantes et activités au jardin ; aucun positionnement motard.
-- Version Auto Plus : `/auto-plus/`, avec ses propres pages et ressources. Usages : motards, préparation des trajets et délai avant la pluie.
+- Version Maison et Jardin actuelle : `/`, `index.html`, `paiement.html`, `assets/`. Usages : arrosage, tonte, plantes, linge, terrasse et vie à la maison ; aucun positionnement motard. À la demande de Claire, le comparatif gratuit/Premium est la première section après l'introduction.
+- Version Auto Plus : `/auto-plus/`, avec ses propres pages et ressources. Usages : motards, préparation des trajets et délai avant la pluie. Claire demande une page courte, sans tableau comparatif, avec textes noirs et Premium dans un volet facultatif ; l'accueil utilise `assets/compact.css`.
 - Copie bleue : `/bleu/`, identité visuelle issue du commit `8273167`. Le 03/11/2026, Claire a explicitement demandé le téléchargement gratuit sur les trois sites : les liens des stores, le comparatif freemium et la sortie gratuite du paiement peuvent donc être ajoutés à cette copie. Préserver sa palette, ses logos et son style initial.
 - Les trois versions proposent un téléchargement gratuit direct, sans passer par le formulaire d'abonnement. L'application se nomme Rain Now sur les stores ; les identifiants sont ceux liés depuis nowinnov.com.
 - Référence produit : nowinnov.com, complétée par les fiches officielles App Store et Google Play. Ne pas présenter les alertes comme exclusivement payantes, ni promettre une mesure de l'humidité du sol ou des prévisions sur un itinéraire complet.
