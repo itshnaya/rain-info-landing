@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Rain Info · Paiement</title>
+<title>Rain Info by Maison et Jardin · Paiement</title>
 <meta name="theme-color" content="#0a1f44">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,11 +85,15 @@ input[aria-invalid=true]{border-color:var(--err)}
 footer{padding:1.6em 0;color:var(--muted);font-size:.85rem;text-align:center}
 footer a{color:var(--muted)}
 </style>
+<link rel="stylesheet" href="assets/brand.css">
 </head>
 <body>
 <header>
   <div class="wrap">
-    <a class="logo" href="index.html" aria-label="Rain Info, retour à l'accueil"><i aria-hidden="true">🌧️</i>Rain Info</a>
+    <div class="brand-lockup">
+      <a class="logo" href="index.html" aria-label="Rain Info by Maison et Jardin, retour à l'accueil"><i aria-hidden="true">🌧️</i><span class="brand-name">Rain Info<small>by Maison et Jardin</small></span></a>
+      <img class="publisher-logo" src="assets/maison-et-jardin.png" width="144" height="64" alt="Maison et Jardin">
+    </div>
     <span class="secure"><span aria-hidden="true">🔒</span> Paiement sécurisé</span>
   </div>
 </header>
@@ -102,7 +106,7 @@ footer a{color:var(--muted)}
       <li><b>2</b>Paiement</li>
       <li><b>3</b>Téléchargement</li>
     </ol>
-    <h1>Votre abonnement Rain Info</h1>
+    <h1>Votre abonnement Rain Info <span class="brand-by">by Maison et Jardin</span></h1>
     <p style="color:var(--muted)">Plus que quelques secondes. Remplissez ces deux champs, puis passez au paiement.</p>
 
     <div class="layout">
@@ -175,7 +179,10 @@ footer a{color:var(--muted)}
 </main>
 
 <footer>
-  <div class="wrap">© 2026 Rain Info · <a href="#">Mentions légales</a> · <a href="#">Conditions de vente</a> · <a href="#">Confidentialité</a></div>
+  <div class="wrap">
+    <img class="publisher-logo footer-publisher" src="assets/maison-et-jardin.png" width="144" height="64" alt="Maison et Jardin" loading="lazy">
+    © 2026 Rain Info <span class="brand-by">by Maison et Jardin</span> · <a href="#">Mentions légales</a> · <a href="#">Conditions de vente</a> · <a href="#">Confidentialité</a>
+  </div>
 </footer>
 
 <script>

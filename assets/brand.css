@@ -1,0 +1,27 @@
+/* Identité commune à l'accueil et à la page de paiement. */
+.brand-lockup{display:flex;align-items:center;gap:1.2rem;min-width:0}
+.brand-name{display:block;line-height:1.2}
+.brand-name small{display:block;margin-top:.35em;color:#d7e6ff;font-family:"Atkinson Hyperlegible",system-ui,sans-serif;font-size:.75rem;font-weight:400;line-height:1.35}
+.publisher-logo{display:block;flex:none;width:144px;height:64px;object-fit:cover;object-position:50% 54%;background:#fff;border:6px solid #fff;border-radius:8px}
+.brand-by{display:inline-block;font-size:.85em}
+nav.top{gap:1rem}
+header .wrap:has(>.brand-lockup){flex-wrap:wrap}
+.logo i{flex:none}
+.footer-publisher{margin:0 auto 1rem}
+.lock{gap:4px}
+.lock .date{margin-bottom:4px}
+.lock .nt .brand-by{display:inline;font-size:inherit}
+.final .btn{display:inline-block;max-width:100%;text-align:center}
+@media(max-width:620px){
+  .brand-lockup{width:100%;justify-content:space-between;gap:.6rem}
+  .brand-lockup .logo{font-size:1.2rem}
+  .brand-lockup .logo i{display:none}
+  .brand-name small{font-size:.75rem}
+  .brand-lockup .publisher-logo{width:112px;height:52px;border-width:4px}
+  nav.top .btn{display:none}
+  header .secure{margin:0 auto}
+}
+@media(max-width:380px){
+  .band{gap:.5em;padding:1.6em .7em}
+  .band b{font-size:1.3rem}
+}
