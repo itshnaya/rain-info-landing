@@ -1,15 +1,16 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Rain Info by Maison et Jardin</title>
 <meta name="description" content="Rain Info by Maison et Jardin vous prévient avant que la pluie arrive, à la minute près, là où vous êtes.">
-<meta name="theme-color" content="#0a1f44">
+<meta name="theme-color" content="#ffffff">
+<meta name="color-scheme" content="light">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --night:#0a1f44; --night2:#123a7a; --sky:#3d8bff; --sky2:#7cc4ff; --cyan:#4fe0ff;
@@ -23,8 +24,8 @@
 *{box-sizing:border-box}
 html{font-size:118.75%;scroll-behavior:smooth} /* 19px de base */
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Atkinson Hyperlegible",system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
-h1,h2,h3{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-weight:800;line-height:1.15;margin:0 0 .5em;letter-spacing:-.01em}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Inter",system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+h1,h2,h3{font-family:"Montserrat",system-ui,sans-serif;font-weight:800;line-height:1.15;margin:0 0 .5em;letter-spacing:-.01em}
 h1{font-size:clamp(2.1rem,6vw,3.3rem)} h2{font-size:clamp(1.6rem,4vw,2.3rem)} h3{font-size:1.2rem;font-weight:700}
 p{margin:0 0 1em}
 :focus-visible{outline:4px solid var(--focus);outline-offset:3px;border-radius:8px}
@@ -33,7 +34,7 @@ p{margin:0 0 1em}
 .skip:focus{left:16px;top:16px}
 .wrap{max-width:1120px;margin:0 auto;padding:0 16px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;border:0;border-radius:999px;
-  padding:.9em 1.7em;font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:1.05rem;text-decoration:none;cursor:pointer;min-height:58px;
+  padding:.9em 1.7em;font-family:"Montserrat",sans-serif;font-weight:800;font-size:1.05rem;text-decoration:none;cursor:pointer;min-height:58px;
   background:linear-gradient(135deg,var(--cyan),var(--sky));color:#06183a;box-shadow:0 10px 30px rgba(61,139,255,.45);transition:transform .15s}
 .btn:hover{transform:translateY(-2px)}
 .btn.light{background:#fff;color:var(--night);box-shadow:none}
@@ -48,7 +49,7 @@ p{margin:0 0 1em}
   mask-image:linear-gradient(to bottom,#000,transparent 70%);animation:pluie 1.2s linear infinite}
 @keyframes pluie{to{background-position:-24px 60px}}
 nav.top{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:1em 0}
-.logo{display:flex;align-items:center;gap:.55em;color:#fff;text-decoration:none;font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:1.3rem}
+.logo{display:flex;align-items:center;gap:.55em;color:#fff;text-decoration:none;font-family:"Montserrat",sans-serif;font-weight:800;font-size:1.3rem}
 .logo i{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-style:normal;
   background:linear-gradient(135deg,var(--cyan),var(--sky));box-shadow:0 6px 18px rgba(79,224,255,.4)}
 nav.top .btn{min-height:48px;padding:.6em 1.2em;font-size:.95rem}
@@ -83,7 +84,7 @@ nav.top .btn{min-height:48px;padding:.6em 1.2em;font-size:.95rem}
 .notif i{flex:none;width:34px;height:34px;border-radius:9px;display:grid;place-items:center;font-style:normal;background:linear-gradient(135deg,var(--cyan),var(--sky))}
 @keyframes pop{0%,8%{transform:translateY(-130%);opacity:0}15%,85%{transform:none;opacity:1}100%{transform:translateY(-130%);opacity:0}}
 .sheet{position:absolute;left:0;right:0;bottom:0;z-index:4;background:rgba(7,21,48,.88);backdrop-filter:blur(8px);color:#fff;border-radius:24px 24px 0 0;padding:1em 1em 1.2em}
-.sheet b{font-family:"Plus Jakarta Sans",sans-serif;font-size:1.05rem}
+.sheet b{font-family:"Montserrat",sans-serif;font-size:1.05rem}
 .sheet small{display:block;color:#a9c1ea;font-size:.75rem}
 .chart{display:flex;align-items:flex-end;gap:3px;height:60px;margin-top:.7em}
 .chart span{flex:1;border-radius:3px 3px 0 0;background:linear-gradient(to top,var(--rain2),var(--rain1))}
@@ -100,18 +101,18 @@ section{padding:4em 0}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:1.6em;box-shadow:0 8px 30px rgba(13,40,90,.06)}
 .card .ico{width:58px;height:58px;border-radius:16px;display:grid;place-items:center;font-size:1.7rem;margin-bottom:.8em;background:linear-gradient(135deg,rgba(79,224,255,.25),rgba(61,139,255,.25))}
 .card p{color:var(--muted);margin:0}
-.big-num{font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:1.6rem;color:var(--sky)}
+.big-num{font-family:"Montserrat",sans-serif;font-weight:800;font-size:1.6rem;color:var(--sky)}
 
 .band{background:linear-gradient(135deg,var(--night),var(--night2));color:#fff;border-radius:32px;padding:2.4em 1.6em;display:grid;gap:1.6em;text-align:center}
 @media(min-width:720px){.band{grid-template-columns:repeat(3,1fr);padding:2.8em}}
-.band b{display:block;font-family:"Plus Jakarta Sans",sans-serif;font-size:2.4rem;font-weight:800;background:linear-gradient(90deg,var(--cyan),var(--sky2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.band b{display:block;font-family:"Montserrat",sans-serif;font-size:2.4rem;font-weight:800;background:linear-gradient(90deg,var(--cyan),var(--sky2));-webkit-background-clip:text;background-clip:text;color:transparent}
 .band span{color:#cfe0ff}
 
 .steps{display:grid;gap:1.2em;counter-reset:s}
 @media(min-width:820px){.steps{grid-template-columns:repeat(3,1fr)}}
 .step{counter-increment:s;position:relative;padding-top:3.4em}
 .step::before{content:counter(s);position:absolute;top:1.3em;left:1.6em;width:2.4em;height:2.4em;border-radius:50%;display:grid;place-items:center;
-  background:linear-gradient(135deg,var(--cyan),var(--sky));color:#06183a;font-weight:800;font-family:"Plus Jakarta Sans",sans-serif}
+  background:linear-gradient(135deg,var(--cyan),var(--sky));color:#06183a;font-weight:800;font-family:"Montserrat",sans-serif}
 .step.card{padding-top:4.6em}
 
 /* Comparatif */
@@ -123,7 +124,7 @@ table.cmp tbody tr:last-child th,table.cmp tbody tr:last-child td{border-bottom:
 table.cmp th[scope=row]{text-align:left;font-weight:700;font-size:1.02rem;padding-left:1em}
 table.cmp th[scope=row] span{display:block;font-weight:400;font-size:.88rem;color:var(--muted)}
 table.cmp thead td{border-bottom:0}
-table.cmp thead th{border-bottom:0;padding-top:1.2em;font-family:"Plus Jakarta Sans",sans-serif;font-size:1.05rem}
+table.cmp thead th{border-bottom:0;padding-top:1.2em;font-family:"Montserrat",sans-serif;font-size:1.05rem}
 table.cmp thead th.free{color:var(--muted)}
 table.cmp .pro{background:linear-gradient(180deg,rgba(79,224,255,.16),rgba(61,139,255,.16))}
 table.cmp thead th.pro{border-radius:20px 20px 0 0;color:var(--ink)}
@@ -156,7 +157,7 @@ table.cmp tbody tr:last-child td.pro{border-radius:0 0 20px 20px}
 .plan .check{position:absolute;top:1.4em;right:1.4em;width:30px;height:30px;border-radius:50%;border:3px solid rgba(255,255,255,.5)}
 .plan:has(input:checked) .check{border-color:var(--cyan);background:var(--cyan);box-shadow:inset 0 0 0 5px var(--night)}
 .badge{display:inline-block;background:linear-gradient(90deg,var(--cyan),var(--sky2));color:#06183a;border-radius:999px;padding:.2em .9em;font-size:.85rem;font-weight:800;margin-bottom:.8em}
-.price{font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:2.6rem;line-height:1}
+.price{font-family:"Montserrat",sans-serif;font-weight:800;font-size:2.6rem;line-height:1}
 .price small{font-size:1rem;font-weight:500;color:#cfe0ff}
 .plan p{color:#cfe0ff;margin:.8em 0 0}
 .pay{text-align:center;margin-top:2em}
@@ -185,13 +186,13 @@ footer a{color:var(--muted);margin:0 .4em}
 :root[data-theme="dark"] .shots{background:linear-gradient(170deg,#0c2149,var(--bg))}
 .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4em;align-items:start}
 .shot{margin:0;text-align:center}
-.shot figcaption{margin-top:1em;font-weight:700;font-family:"Plus Jakarta Sans",sans-serif;font-size:1.02rem}
-.shot figcaption span{display:block;font-family:"Atkinson Hyperlegible",sans-serif;font-weight:400;color:var(--muted);font-size:.9rem}
+.shot figcaption{margin-top:1em;font-weight:700;font-family:"Montserrat",sans-serif;font-size:1.02rem}
+.shot figcaption span{display:block;font-family:"Inter",sans-serif;font-weight:400;color:var(--muted);font-size:.9rem}
 .mini{width:100%;max-width:240px;border-radius:38px;padding:9px}
 .mini .screen{border-radius:30px;color:#fff;font-size:.72rem;line-height:1.35;text-align:left}
 .mini .notch{width:70px;height:20px;top:8px}
 .scr-pad{position:absolute;inset:0;padding:38px 12px 12px;display:flex;flex-direction:column;gap:8px;background:linear-gradient(170deg,#0f2f66,#0a1f44)}
-.scr-h{font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:.95rem}
+.scr-h{font-family:"Montserrat",sans-serif;font-weight:800;font-size:.95rem}
 .scr-s{color:#a9c1ea;font-size:.68rem}
 .tile{background:rgba(255,255,255,.08);border-radius:14px;padding:9px 10px}
 .timeline{position:absolute;left:10px;right:10px;bottom:12px;z-index:4;background:rgba(7,21,48,.9);border-radius:16px;padding:9px 10px}
@@ -210,7 +211,7 @@ footer a{color:var(--muted);margin:0 .4em}
 .row .p{color:var(--cyan);font-weight:700;width:2.8em;text-align:right}
 .row .t{color:#cfe0ff;width:4.4em;text-align:right}
 .lock{position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,#3a5fb0,transparent 55%),linear-gradient(170deg,#1b2f5e,#0a1428);padding:44px 10px 12px;display:flex;flex-direction:column;gap:7px}
-.lock .clock{text-align:center;font-family:"Plus Jakarta Sans",sans-serif;font-weight:700;font-size:2.6rem;line-height:1;margin-bottom:2px}
+.lock .clock{text-align:center;font-family:"Montserrat",sans-serif;font-weight:700;font-size:2.6rem;line-height:1;margin-bottom:2px}
 .lock .date{text-align:center;color:#cfe0ff;font-size:.72rem;margin-bottom:8px}
 .nt{background:rgba(255,255,255,.92);color:#0d1b33;border-radius:14px;padding:8px 9px;display:flex;gap:7px;align-items:flex-start;font-size:.66rem;line-height:1.3}
 .nt i{flex:none;width:24px;height:24px;border-radius:7px;display:grid;place-items:center;font-style:normal;font-size:.8rem;background:linear-gradient(135deg,var(--cyan),var(--sky))}
@@ -271,16 +272,23 @@ footer a{color:var(--muted);margin:0 .4em}
 <a class="skip" href="#contenu">Aller au contenu</a>
 
 <header class="hero">
+  <div class="magazine-bar"><div class="wrap"><span>Maison · Jardin · Art de vivre</span><span>Les services Maison et Jardin</span></div></div>
+  <div class="magazine-masthead">
+    <img class="publisher-logo masthead-logo" src="assets/maison-et-jardin.png" width="300" height="130" alt="Maison et Jardin">
+    <p>La maison, le jardin, la vie dehors</p>
+  </div>
   <div class="wrap">
     <nav class="top" aria-label="Navigation principale">
-      <div class="brand-lockup">
-        <a class="logo" href="#" aria-label="Rain Info by Maison et Jardin, accueil"><i aria-hidden="true">🌧️</i><span class="brand-name">Rain Info<small>by Maison et Jardin</small></span></a>
-        <img class="publisher-logo" src="assets/maison-et-jardin.png" width="144" height="64" alt="Maison et Jardin">
+      <a class="service-name" href="#" aria-label="Rain Info by Maison et Jardin, accueil">Rain Info <span>by Maison et Jardin</span></a>
+      <div class="service-navigation">
+        <a href="#t-fonc">Le service</a>
+        <a href="#t-shots">L’application</a>
+        <a class="btn" href="#abonnement">S'abonner</a>
       </div>
-      <a class="btn" href="#abonnement">S'abonner</a>
     </nav>
     <div class="hero-in">
-      <div>
+      <div class="hero-copy">
+        <p class="hero-brand">Rain Info <span>by Maison et Jardin</span></p>
         <span class="pill">☔ Alerte pluie à la minute près</span>
         <h1>La pluie arrive ?<br><span>Vous le savez avant.</span></h1>
         <p class="lead">Rain Info <span class="brand-by">by Maison et Jardin</span> vous envoie un message quelques minutes avant qu'il pleuve, exactement là où vous êtes.</p>
@@ -474,7 +482,8 @@ footer a{color:var(--muted);margin:0 .4em}
   <section id="abonnement" aria-labelledby="t-abo">
     <div class="wrap">
       <div class="center">
-        <span class="kicker" style="color:var(--cyan)">Abonnement</span>
+        <span class="kicker">Abonnement</span>
+        <p class="section-signature">Rain Info <strong>by Maison et Jardin</strong></p>
         <h2 id="t-abo">Choisissez votre formule</h2>
         <p>Des prix clairs, sans mauvaise surprise.</p>
       </div>
@@ -527,6 +536,7 @@ footer a{color:var(--muted);margin:0 .4em}
 
   <section class="final" style="padding-top:0">
     <div class="wrap">
+      <p class="section-signature">Rain Info <strong>by Maison et Jardin</strong></p>
       <h2>Ne vous faites plus surprendre par la pluie.</h2>
       <p><a class="btn" href="#abonnement">Je m'abonne à Rain Info <span class="brand-by">by Maison et Jardin</span></a></p>
     </div>
@@ -539,7 +549,8 @@ footer a{color:var(--muted);margin:0 .4em}
 </div>
 <footer>
   <div class="wrap">
-    <img class="publisher-logo footer-publisher" src="assets/maison-et-jardin.png" width="144" height="64" alt="Maison et Jardin" loading="lazy">
+    <img class="publisher-logo footer-publisher" src="assets/maison-et-jardin.png" width="220" height="96" alt="Maison et Jardin" loading="lazy">
+    <p class="footer-signature">Le service météo de Maison et Jardin</p>
     <p>© 2026 Rain Info <span class="brand-by">by Maison et Jardin</span></p>
     <p><a href="#">Mentions légales</a> · <a href="#">Conditions de vente</a> · <a href="#">Confidentialité</a> · <a href="#">Contact</a></p>
   </div>
