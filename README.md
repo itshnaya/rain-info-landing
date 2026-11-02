@@ -29,3 +29,16 @@ Le logo Auto Plus est celui fourni sur la page partenaire du Mondial de l'Auto 2
 - Paiement : `paiement.html` (nom, e-mail, formule, CGV). Renseigner les Stripe Payment Links dans `PAYMENT_LINKS` de `paiement.html` ; sans lien, rien n est envoyé ni enregistré.
 - Prix : 1,99 €/mois (confirmé par Claire le 2026-11-02) ; 19,99 €/an (provisoire, à confirmer).
 - Reste à faire : prix définitifs, liens Stripe, liens App Store / Google Play, pages légales.
+
+## Présentation trajets et motards — 03/11/2026
+
+Les pages Maison et Jardin et Auto Plus présentent la préparation des trajets à moto, à vélo ou à pied : nouveau visuel, exemples d'usage, hiérarchie éditoriale et question dédiée aux motards. Les alertes restent décrites comme localisées autour de la position ; aucune prévision sur un itinéraire entier n'est annoncée. La version `bleu/` est inchangée.
+
+- Styles propres à chaque version : `assets/travel.css` et `auto-plus/assets/travel.css`.
+- Visuel livré : `assets/trajet-moto-averse-v1.jpg` et `auto-plus/assets/trajet-moto-averse-v1.jpg` ; même composition, enregistrée en JPEG pour réduire le poids de chargement, sans retouche de la scène.
+- Création : outil intégré `image_gen` (mode par défaut de la compétence imagegen), sans appel CLI ni nouvelle clé API. Image d'illustration générée, sans marque ni personnage réel identifié ; l'alerte en surimpression est explicitement présentée comme un exemple.
+- Original conservé dans le dossier des images générées de cette conversation : `exec-4e56c5d6-7ab0-4a75-b077-925d2cfdc31f.png`.
+
+Prompt exact du visuel :
+
+> Use case: photorealistic-natural. Asset type: premium editorial website hero photograph, portrait 4:5 composition, no text. Create a calm, authentic French countryside scene before an approaching rain shower. An adult motorcyclist wearing a matte black full-face helmet, practical black textile riding jacket, riding trousers and boots is standing safely on a wide dry gravel turnout, entirely off the road, beside a parked black touring motorcycle on its side stand. They are checking a smartphone before departure, not riding. The phone screen faces the person and is not readable. A quiet winding country lane, a leafy hedge, distant low hills and textured blue-grey rain clouds form the background. Soft natural daylight still illuminates the rider and motorcycle. Realistic fabric, gravel and foliage textures; refined magazine photography, subtle film grain, natural neutral whites, charcoal and greens, no heavy colour grade. Show the rider and most of the motorcycle together, with room around the subject for a tasteful web crop; centre the meaningful action and leave the lower quarter visually quiet for an HTML weather-card overlay. Eye-level three-quarter viewpoint, 50mm lens feeling, restrained depth of field. No logos, brand emblems, lettering, watermark, graphics or interface. No rain falling on the rider, no risky behaviour, no traffic in motion, no neon effects.

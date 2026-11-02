@@ -10,3 +10,5 @@ Copie de la landing Rain Info avec identité Auto Plus, créée le 03/11/2026.
 - Prix, formulaires et fonctionnalités repris du site Rain Info. Les liens Stripe restent à renseigner avant tout paiement réel.
 
 Lancer les vérifications depuis la racine : `python3 -m unittest discover -s tests -v`.
+
+Présentation enrichie le 03/11/2026 : motards et anticipation des averses avant un trajet, photo d'illustration générée et enregistrée dans `assets/trajet-moto-averse-v1.jpg`, styles complémentaires dans `assets/travel.css`. Prompt exact et provenance consignés dans le README principal. Les scripts d'abonnement, tarifs et contrôles des formulaires sont conservés.
