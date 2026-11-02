@@ -1,0 +1,115 @@
+/* Auto Plus : page courte, texte noir et une seule illustration. */
+:root{color-scheme:light;--ink:#111;--red:#ca2835;--line:#d5d5d5;--surface:#f6f6f6}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{margin:0;background:#fff;color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:17px;line-height:1.55}
+h1,h2,h3,p,figure{margin:0}
+h1,h2,h3{font-family:Montserrat,Inter,system-ui,sans-serif;line-height:1.18;letter-spacing:-.025em}
+h2{font-size:28px}h3{font-size:18px;letter-spacing:-.015em}
+a{color:inherit}
+button,input{font:inherit}
+a,button,summary,input{touch-action:manipulation}
+:focus-visible{outline:3px solid #111;outline-offset:5px}
+.wrap{width:min(1120px,calc(100% - 48px));margin-inline:auto}
+.sr,.skip-link:not(:focus){position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.skip-link:focus{position:fixed;top:10px;left:10px;z-index:5;background:#fff;padding:12px}
+.site-header{border-top:5px solid var(--red);border-bottom:1px solid var(--line)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:12px}
+.identity{display:flex;align-items:center;gap:16px;text-decoration:none;font-size:15px;font-weight:600;line-height:1.35}
+.identity img{width:58px;height:58px;object-fit:contain}
+.identity strong{display:block;font-family:Montserrat,system-ui,sans-serif;color:var(--red);font-size:18px;font-weight:800}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:20px;min-height:50px;padding:13px 22px;border:1px solid var(--red);border-radius:6px;background:var(--red);color:#fff;text-decoration:none;font-weight:700;font-size:16px;line-height:1.4;cursor:pointer;text-align:center}
+.btn:hover{background:#a51e29;border-color:#a51e29}
+.header-download{min-height:44px;padding:10px 18px;font-size:14px}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center;padding-block:44px}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;margin-bottom:16px}
+h1{font-size:clamp(36px,4.2vw,52px);font-weight:800;margin-bottom:22px;line-height:1.1;letter-spacing:-.04em}
+h1 span{color:var(--red)}
+.lead{font-size:18px;line-height:1.65;margin-bottom:26px;max-width:44ch}
+.free-note{font-size:13px;margin-top:12px}
+.travel-visual{position:relative;min-width:0;height:430px;border-radius:12px;overflow:hidden;background:var(--surface)}
+.travel-photo{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 38%}
+.weather-alert{position:absolute;bottom:18px;left:18px;right:18px;background:#fff;border-radius:8px;padding:17px 20px;color:var(--ink);box-shadow:0 3px 18px #0002}
+.alert-top{display:flex;justify-content:space-between;gap:12px;align-items:center;font-size:14px;font-weight:600}
+.alert-top svg{color:var(--red)}
+.rain-countdown{display:block;font-family:Montserrat,system-ui,sans-serif;color:var(--red);font-size:56px;font-weight:800;letter-spacing:-.05em;line-height:1.15;margin-block:2px 6px}
+.rain-countdown span{font-family:Inter,system-ui,sans-serif;color:var(--ink);font-size:20px;letter-spacing:0}
+.rain-summary{font-size:14px;font-weight:600}
+.rain-summary>span{margin-inline:5px}
+.example-note{display:block;font-size:11px;margin-top:6px}
+.benefits{padding-block:28px 38px;border-top:1px solid var(--line)}
+.benefits h2{font-size:25px;margin-bottom:24px}
+.benefit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px}
+.benefit-grid article{position:relative;padding-left:34px}
+.benefit-number{position:absolute;left:0;top:0;color:var(--red);font-weight:800;font-size:14px;line-height:1.6}
+.benefit-grid h3{margin-bottom:9px}
+.benefit-grid p{font-size:15px;line-height:1.6}
+.download{padding-block:4px 36px;scroll-margin-top:24px}
+.download-panel{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:30px}
+.download-top{display:grid;grid-template-columns:1.25fr 1fr;align-items:center;gap:36px}
+.download-top h2{margin-bottom:12px}
+.download-top .eyebrow{margin-bottom:10px}
+.download-top p:not(.eyebrow){font-size:16px}
+.stores{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.store{display:flex;align-items:center;gap:9px;padding:13px 12px;border-radius:6px;background:#111;color:#fff;text-decoration:none;font-size:10px;line-height:1.3;min-height:68px}
+.store:hover{background:#333}
+.store svg{flex-shrink:0}
+.store strong{display:block;font-size:17px;white-space:nowrap}
+.store-arrow{margin-left:auto;font-size:20px}
+.play-icon{font-size:22px}
+.download-note{font-size:12px;margin-top:18px}
+details>summary{list-style:none;cursor:pointer;font-weight:600}
+details>summary::-webkit-details-marker{display:none}
+.disclosure-icon{font-size:24px;line-height:1;flex-shrink:0;font-weight:400;margin-left:16px}
+details[open]>summary .disclosure-icon{transform:rotate(45deg)}
+.premium{margin-top:22px;border-top:1px solid var(--line);padding-top:20px;scroll-margin-top:24px}
+.premium>summary{display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:400}
+.premium>summary strong{color:var(--red);white-space:nowrap;margin-left:5px}
+.premium-content{padding-top:20px;max-width:720px}
+.premium-content>p{font-size:15px;margin-bottom:20px}
+fieldset{border:0;padding:0;margin:0}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+.plan{display:flex;align-items:center;gap:12px;border:1px solid #a3a3a3;border-radius:6px;background:#fff;padding:15px;cursor:pointer}
+.plan:has(input:checked){border:2px solid var(--red);padding:14px}
+.plan input{accent-color:var(--red);width:18px;height:18px;flex-shrink:0;margin:0}
+.plan strong{display:block;font-size:21px;line-height:1.4}
+.plan small{font-size:14px;font-weight:500}
+.plan>span>span{display:block;font-size:12px;margin-top:3px}
+.premium-content button{font-size:14px;min-height:44px;padding:11px 18px}
+.faq{padding-block:0 36px}
+.faq h2{font-size:23px;margin-bottom:15px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{display:flex;align-items:center;justify-content:space-between;padding:16px 0;font-size:15px}
+.faq details>p{font-size:15px;max-width:760px;padding:0 30px 18px 0}
+footer{border-top:1px solid var(--line);padding-block:22px;font-size:12px}
+footer .wrap{display:flex;justify-content:space-between;gap:15px}
+footer strong{color:var(--red)}
+@media(max-width:1000px){
+ .hero{gap:30px}.travel-visual{height:420px}
+ .download-top{grid-template-columns:1fr 1fr;gap:20px}.stores{grid-template-columns:1fr}
+ .store{min-height:58px;padding:10px 16px}.store strong{font-size:16px}
+}
+@media(max-width:700px){
+ .wrap{width:calc(100% - 36px)}
+ .header-inner{padding-block:8px;gap:12px}.identity{gap:9px;font-size:12px}.identity img{width:43px;height:43px}.identity strong{font-size:14px}
+ .header-download{font-size:12px;min-height:40px;padding:10px 12px}
+ .hero{grid-template-columns:1fr;gap:24px;padding-block:30px}
+ h1{font-size:39px;margin-bottom:16px;max-width:13ch}.eyebrow{font-size:11px;margin-bottom:12px}
+ .lead{font-size:16px;line-height:1.6;margin-bottom:20px;max-width:none}
+ .hero-download{width:100%;gap:16px}.free-note{font-size:12px;text-align:center;margin-top:10px}
+ .travel-visual{height:350px}.travel-photo{object-position:50% 30%}
+ .weather-alert{left:12px;right:12px;bottom:12px;padding:14px 16px}
+ .rain-countdown{font-size:48px}.alert-top{font-size:13px}.rain-summary{font-size:12px}.example-note{font-size:10px}
+ .benefits{padding-block:24px 28px}.benefits h2{font-size:24px;margin-bottom:22px;max-width:20ch}
+ .benefit-grid{grid-template-columns:1fr;gap:20px}.benefit-grid h3{font-size:17px;margin-bottom:5px}.benefit-grid p{font-size:15px}
+ .download{padding-block:0 28px}.download-panel{padding:22px 18px}
+ .download-top{grid-template-columns:1fr;gap:20px}.download-top h2{font-size:25px}.download-top p:not(.eyebrow){font-size:15px}
+ .stores{gap:9px}.store{min-height:61px;padding:11px 16px;font-size:11px}.store strong{font-size:18px}.store-arrow{font-size:22px}
+ .download-note{font-size:11px;margin-top:14px}.premium{margin-top:18px;padding-top:17px}
+ .premium>summary{font-size:14px;line-height:1.6}.premium>summary strong{display:block;margin-left:0}
+ .plans{grid-template-columns:1fr}.premium-content button{width:100%}
+ .faq{padding-block:0 26px}.faq h2{font-size:22px}.faq summary{font-size:14px;line-height:1.5;padding-block:15px}.faq details>p{font-size:14px}
+ footer{padding-block:18px}footer .wrap{flex-direction:column;gap:4px;font-size:11px}
+}
+@media(max-width:360px){h1{font-size:35px}.identity strong{font-size:12px}.identity{font-size:11px}.header-download{font-size:11px;padding-inline:10px}.travel-visual{height:330px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
