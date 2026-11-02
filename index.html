@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Rain Info</title>
+<meta name="description" content="Rain Info vous prévient avant que la pluie arrive, à la minute près, là où vous êtes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f8fb; --surface:#ffffff; --ink:#14202e; --muted:#3d4b5c;
+  --brand:#0b5cad; --brand-ink:#ffffff; --accent:#e8f1fb; --line:#c9d5e3;
+  --ok:#11683a; --focus:#ffb000;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1720; --surface:#17222f; --ink:#f1f5fa; --muted:#c3cfdc;
+    --brand:#5aa9ff; --brand-ink:#0b1622; --accent:#1c2c3e; --line:#2f4257; --ok:#5fd394;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1720; --surface:#17222f; --ink:#f1f5fa; --muted:#c3cfdc;
+  --brand:#5aa9ff; --brand-ink:#0b1622; --accent:#1c2c3e; --line:#2f4257; --ok:#5fd394;
+}
+*{box-sizing:border-box}
+html{font-size:125%} /* 20px de base : lisible sans zoomer */
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Atkinson Hyperlegible",system-ui,sans-serif;line-height:1.6}
+h1,h2,h3{font-family:"DM Serif Display",Georgia,serif;font-weight:400;line-height:1.2;margin:0 0 .5em}
+h1{font-size:2.1rem} h2{font-size:1.6rem} h3{font-size:1.2rem}
+p{margin:0 0 1em}
+a{color:var(--brand)}
+:focus-visible{outline:4px solid var(--focus);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:var(--bg);padding:.6em 1em}
+.skip:focus{left:16px;top:16px;z-index:10}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header.top{background:var(--surface);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1em;padding:.8em 16px}
+.logo{display:flex;align-items:center;gap:.5em;font-weight:700;font-size:1.15rem;color:var(--ink);text-decoration:none}
+.btn{display:inline-block;background:var(--brand);color:var(--brand-ink);border:0;border-radius:12px;
+  padding:.85em 1.4em;font:inherit;font-weight:700;font-size:1.05rem;text-decoration:none;cursor:pointer;min-height:56px;text-align:center}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--brand);border:2px solid var(--brand)}
+.hero{padding:2.4em 0 2em}
+.hero .wrap{display:grid;gap:2em;align-items:center}
+@media(min-width:820px){.hero .wrap{grid-template-columns:1.2fr .8fr}}
+.lead{font-size:1.15rem;color:var(--muted)}
+.phone{background:var(--surface);border:2px solid var(--line);border-radius:28px;padding:1.2em;max-width:340px;margin:0 auto;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.alert{background:var(--accent);border-radius:16px;padding:1em;margin-bottom:.8em}
+.alert strong{display:block;font-size:1.1rem}
+.bars{display:flex;align-items:flex-end;gap:4px;height:80px;margin-top:.6em}
+.bars span{flex:1;background:var(--brand);border-radius:3px 3px 0 0;opacity:.85}
+section{padding:2.4em 0}
+section.alt{background:var(--surface);border-block:1px solid var(--line)}
+.grid{display:grid;gap:1.2em}
+@media(min-width:720px){.grid.c3{grid-template-columns:repeat(3,1fr)}.grid.c2{grid-template-columns:repeat(2,1fr)}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:1.3em}
+section.alt .card{background:var(--bg)}
+.ico{font-size:2rem;line-height:1;margin-bottom:.3em}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;gap:1em}
+.steps li{counter-increment:s;display:flex;gap:.8em;align-items:flex-start}
+.steps li::before{content:counter(s);flex:none;width:2.2em;height:2.2em;border-radius:50%;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font-weight:700}
+table.cmp{width:100%;border-collapse:collapse;background:var(--surface);border-radius:16px;overflow:hidden}
+table.cmp th,table.cmp td{padding:.8em;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+table.cmp th[scope=col]{background:var(--accent)}
+.yes{color:var(--ok);font-weight:700}
+.plans{display:grid;gap:1.2em}
+@media(min-width:720px){.plans{grid-template-columns:1fr 1fr}}
+.plan{position:relative;background:var(--surface);border:3px solid var(--line);border-radius:18px;padding:1.4em;cursor:pointer;display:block}
+.plan:has(input:checked){border-color:var(--brand);background:var(--accent)}
+.plan input{position:absolute;opacity:0;pointer-events:none}
+.plan:has(input:focus-visible){outline:4px solid var(--focus);outline-offset:3px}
+.price{font-size:2rem;font-weight:700}
+.badge{display:inline-block;background:var(--ok);color:#fff;border-radius:999px;padding:.15em .8em;font-size:.85rem;font-weight:700;margin-bottom:.5em}
+.reassure{list-style:none;padding:0;margin:1.2em 0 0;display:grid;gap:.4em}
+.reassure li::before{content:"✓ ";color:var(--ok);font-weight:700}
+#pay-msg{margin-top:1em;padding:1em;border-radius:12px;background:var(--accent);display:none}
+details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1em 1.2em;margin-bottom:.8em}
+summary{cursor:pointer;font-weight:700;font-size:1.05rem}
+footer{padding:2em 0;color:var(--muted);font-size:.9rem}
+footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="Rain Info, accueil"><span aria-hidden="true">🌧️</span> Rain Info</a>
+    <a class="btn" href="#abonnement">S'abonner</a>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Sachez quand la pluie arrive, à la minute près.</h1>
+        <p class="lead">Rain Info vous prévient <strong>avant</strong> qu'il pleuve, là où vous êtes. Plus besoin de regarder le ciel : votre téléphone vous le dit.</p>
+        <p><a class="btn" href="#abonnement">Essayer Rain Info</a></p>
+        <p>Simple à utiliser, gros caractères, sans réglage compliqué.</p>
+      </div>
+      <div class="phone" role="img" aria-label="Exemple d'écran Rain Info : alerte pluie dans 12 minutes à votre adresse">
+        <div class="alert">
+          <strong>🌧️ Pluie dans 12 minutes</strong>
+          Prenez votre parapluie avant de sortir.
+        </div>
+        <div class="alert">
+          <strong>Prochaine heure</strong>
+          <div class="bars" aria-hidden="true">
+            <span style="height:5%"></span><span style="height:5%"></span><span style="height:20%"></span><span style="height:45%"></span><span style="height:80%"></span><span style="height:95%"></span><span style="height:70%"></span><span style="height:40%"></span><span style="height:15%"></span><span style="height:5%"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" aria-labelledby="t-fonc">
+    <div class="wrap">
+      <h2 id="t-fonc">Ce que fait Rain Info</h2>
+      <div class="grid c3">
+        <div class="card"><div class="ico" aria-hidden="true">⏰</div><h3>Alerte avant la pluie</h3><p>Une notification arrive sur votre téléphone quelques minutes avant que la pluie tombe chez vous.</p></div>
+        <div class="card"><div class="ico" aria-hidden="true">📍</div><h3>Là où vous êtes</h3><p>Les prévisions suivent votre position, ou l'adresse de votre choix (maison, jardin, résidence secondaire).</p></div>
+        <div class="card"><div class="ico" aria-hidden="true">🗺️</div><h3>Carte de la pluie</h3><p>Voyez les nuages de pluie se déplacer sur une carte simple, en direct.</p></div>
+        <div class="card"><div class="ico" aria-hidden="true">📈</div><h3>L'heure qui vient</h3><p>Un graphique clair montre quand la pluie commence, quand elle est forte et quand elle s'arrête.</p></div>
+        <div class="card"><div class="ico" aria-hidden="true">⛈️</div><h3>Orages et grêle</h3><p>Soyez averti des orages qui approchent pour rentrer le linge ou protéger vos plantes.</p></div>
+        <div class="card"><div class="ico" aria-hidden="true">📱</div><h3>Widget sur l'écran</h3><p>La météo de la prochaine heure directement sur l'écran d'accueil, sans ouvrir l'application.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-comment">
+    <div class="wrap">
+      <h2 id="t-comment">Comment ça marche ?</h2>
+      <ol class="steps">
+        <li><div><strong>Choisissez votre formule</strong> ci-dessous et payez en toute sécurité.</div></li>
+        <li><div><strong>Téléchargez Rain Info</strong> sur votre téléphone. Le lien vous est envoyé par e-mail.</div></li>
+        <li><div><strong>C'est tout.</strong> Rain Info vous prévient tout seul quand la pluie approche.</div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="alt" aria-labelledby="t-avantages">
+    <div class="wrap">
+      <h2 id="t-avantages">Pourquoi prendre l'abonnement ?</h2>
+      <p>La version gratuite donne la météo du jour. L'abonnement vous <strong>prévient à l'avance</strong> et ajoute tout ce qui rend la vie plus simple.</p>
+      <div style="overflow-x:auto">
+      <table class="cmp">
+        <caption class="skip-cap" style="text-align:left;padding-bottom:.5em;font-weight:700">Comparaison gratuit / abonnement</caption>
+        <thead><tr><th scope="col">Fonction</th><th scope="col">Gratuit</th><th scope="col">Abonnement</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Météo du jour</th><td class="yes">Oui</td><td class="yes">Oui</td></tr>
+          <tr><th scope="row">Alerte avant la pluie</th><td>Non</td><td class="yes">Oui</td></tr>
+          <tr><th scope="row">Carte de la pluie en direct</th><td>Limitée</td><td class="yes">Oui, complète</td></tr>
+          <tr><th scope="row">Alertes orage et grêle</th><td>Non</td><td class="yes">Oui</td></tr>
+          <tr><th scope="row">Plusieurs adresses</th><td>1 adresse</td><td class="yes">Jusqu'à 5</td></tr>
+          <tr><th scope="row">Sans publicité</th><td>Non</td><td class="yes">Oui</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="abonnement" aria-labelledby="t-abo">
+    <div class="wrap">
+      <h2 id="t-abo">Choisissez votre formule</h2>
+      <p>Prix clairs, sans surprise. Vous pouvez arrêter quand vous voulez.</p>
+      <form id="pay-form">
+        <fieldset style="border:0;padding:0;margin:0">
+          <legend class="skip-cap" style="font-weight:700;margin-bottom:.6em">Formule</legend>
+          <div class="plans">
+            <label class="plan">
+              <input type="radio" name="plan" value="annuel" checked>
+              <span class="badge">Le plus avantageux</span>
+              <h3>Un an</h3>
+              <div class="price">19,99 €<span style="font-size:1rem;font-weight:400"> par an</span></div>
+              <p>Soit environ 1,67 € par mois. Payé une seule fois pour l'année.</p>
+            </label>
+            <label class="plan">
+              <input type="radio" name="plan" value="mensuel">
+              <h3>Un mois</h3>
+              <div class="price">2,99 €<span style="font-size:1rem;font-weight:400"> par mois</span></div>
+              <p>Payé chaque mois. Arrêtez quand vous voulez.</p>
+            </label>
+          </div>
+        </fieldset>
+        <p style="margin-top:1.4em"><button class="btn" type="submit" style="width:100%;max-width:480px">Continuer vers le paiement sécurisé</button></p>
+        <div id="pay-msg" role="status" aria-live="polite"></div>
+      </form>
+      <ul class="reassure">
+        <li>Paiement sécurisé par carte bancaire</li>
+        <li>Un e-mail de rappel avant chaque renouvellement</li>
+        <li>Résiliation en un clic, sans justification</li>
+        <li>Une question ? Une vraie personne vous répond</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="alt" aria-labelledby="t-faq">
+    <div class="wrap">
+      <h2 id="t-faq">Questions fréquentes</h2>
+      <details><summary>Est-ce compliqué à utiliser ?</summary><p>Non. Une fois installé, Rain Info fonctionne tout seul. Vous recevez simplement un message quand la pluie approche.</p></details>
+      <details><summary>Comment arrêter mon abonnement ?</summary><p>Depuis le lien reçu par e-mail, en un clic. Vous gardez l'accès jusqu'à la fin de la période déjà payée.</p></details>
+      <details><summary>Sur quel téléphone ça marche ?</summary><p>Sur les iPhone et les téléphones Android récents.</p></details>
+      <details><summary>Serai-je prélevé sans prévenir ?</summary><p>Non. Nous vous envoyons un e-mail avant chaque renouvellement, avec le montant exact.</p></details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Rain Info · <a href="#">Mentions légales</a> · <a href="#">Conditions de vente</a> · <a href="#">Confidentialité</a> · <a href="#">Contact</a></p>
+  </div>
+</footer>
+
+<script>
+/* À remplir : liens Stripe Payment Links (aucun secret, ce sont des liens publics) */
+const PAYMENT_LINKS = { annuel: "", mensuel: "" };
+
+document.getElementById("pay-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const plan = new FormData(this).get("plan");
+  const url = PAYMENT_LINKS[plan];
+  const msg = document.getElementById("pay-msg");
+  if (url) { window.location.href = url; return; }
+  msg.style.display = "block";
+  msg.textContent = "Le paiement en ligne ouvre très bientôt. Merci de votre patience !";
+});
+</script>
+</body>
+</html>
