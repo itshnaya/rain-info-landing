@@ -178,6 +178,47 @@ details p{margin:.8em 0 0;color:var(--muted)}
 .final{text-align:center}
 footer{padding:2.4em 0;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem;text-align:center}
 footer a{color:var(--muted);margin:0 .4em}
+
+/* ---------- Optimisation mobile ---------- */
+.sticky-cta{display:none}
+@media(max-width:879px){
+  html{font-size:112.5%}
+  section{padding:2.8em 0}
+  .center{margin-bottom:1.8em}
+  .hero-in{gap:1.8em;padding:1.2em 0 2.6em;text-align:center}
+  .hero .lead{margin-left:auto;margin-right:auto}
+  .cta-row{justify-content:center;flex-direction:column;gap:.6em}
+  .cta-row .btn{width:100%;max-width:420px}
+  .stores{justify-content:center}
+  .phone{width:min(250px,68vw);border-radius:38px;padding:10px}
+  .screen{border-radius:30px}
+  .notif{top:40px;font-size:.72rem}
+  .sheet b{font-size:.92rem;white-space:nowrap}
+  .band{grid-template-columns:repeat(3,1fr);gap:.5em}
+  .band b{font-size:1.3rem;white-space:nowrap}
+  .band span{font-size:.78rem;line-height:1.3;display:block}
+  .card{padding:1.3em;border-radius:20px}
+  .feat .card{display:grid;grid-template-columns:auto 1fr;column-gap:1em;align-items:start}
+  .feat .card .ico{grid-row:span 2;margin:0;width:52px;height:52px}
+  .feat .card h3{margin-bottom:.25em}
+  .band{border-radius:24px;padding:1.6em 1em;gap:1.1em}
+  .band b{font-size:2rem}
+  .step.card{padding-top:1.3em;padding-left:4.4em}
+  .step::before{top:1.2em;left:1.1em}
+  .plan{padding:1.4em 1.2em}
+  .price{font-size:2.2rem}
+  .reassure{padding:0 .2em}
+  .final h2{font-size:1.5rem}
+  body{padding-bottom:84px}
+  .sticky-cta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;gap:.8em;align-items:center;justify-content:space-between;
+    padding:.7em 16px calc(.7em + env(safe-area-inset-bottom));background:rgba(10,31,68,.96);backdrop-filter:blur(8px);color:#fff;
+    box-shadow:0 -8px 24px rgba(0,0,0,.25);transition:transform .25s}
+  .sticky-cta.hide{transform:translateY(110%)}
+  .sticky-cta span{font-size:.9rem;line-height:1.25}
+  .sticky-cta b{display:block;font-size:1.05rem}
+  .sticky-cta .btn{min-height:52px;padding:.6em 1.3em;font-size:1rem;flex:none}
+}
+@media(max-width:380px){ nav.top .btn{display:none} }
 </style>
 </head>
 <body>
@@ -358,6 +399,10 @@ footer a{color:var(--muted);margin:0 .4em}
   </section>
 </main>
 
+<div class="sticky-cta" id="sticky" aria-hidden="false">
+  <span><b>Dès 1,67 € / mois</b>Arrêt en un clic</span>
+  <a class="btn" href="#abonnement">S'abonner</a>
+</div>
 <footer>
   <div class="wrap">
     <p>© 2026 Rain Info</p>
@@ -378,6 +423,18 @@ document.getElementById("pay-form").addEventListener("submit", function (e) {
   msg.style.display = "block";
   msg.textContent = "Le paiement en ligne ouvre très bientôt. Merci de votre patience !";
 });
+
+/* Barre « S'abonner » mobile : masquée en haut de page et sur la section des formules */
+(function(){
+  var bar=document.getElementById("sticky"), hero=document.querySelector(".hero"), abo=document.getElementById("abonnement");
+  if(!bar||!("IntersectionObserver" in window)) return;
+  var heroVis=true, aboVis=false;
+  function upd(){ var h=heroVis||aboVis; bar.classList.toggle("hide",h); bar.setAttribute("aria-hidden",h?"true":"false");
+    bar.querySelector("a").tabIndex=h?-1:0; }
+  new IntersectionObserver(function(e){heroVis=e[0].isIntersecting;upd();},{threshold:.15}).observe(hero);
+  new IntersectionObserver(function(e){aboVis=e[0].isIntersecting;upd();},{threshold:.1}).observe(abo);
+  upd();
+})();
 </script>
 </body>
 </html>
