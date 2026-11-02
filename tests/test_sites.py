@@ -88,12 +88,43 @@ class SiteTests(unittest.TestCase):
                     other = "Maison et Jardin" if version == "auto-plus" else "Auto Plus"
                     self.assertNotIn(other, source)
 
-    def test_blue_archive_matches_the_version_before_redesign(self):
+    def test_blue_visual_assets_match_the_version_before_redesign(self):
         checksums = json.loads((ROOT / "tests" / "blue-8273167-sha256.json").read_text())
         for name, expected in checksums.items():
+            if not name.startswith("assets/"):
+                continue
             with self.subTest(file=name):
                 actual = hashlib.sha256((ROOT / "bleu" / name).read_bytes()).hexdigest()
                 self.assertEqual(actual, expected, "The preserved blue version changed")
+
+    def test_blue_authorized_freemium_changes_are_preserved(self):
+        checksums = json.loads((ROOT / "tests" / "blue-freemium-20261103-sha256.json").read_text())
+        for name, expected in checksums.items():
+            with self.subTest(file=name):
+                self.assertEqual(hashlib.sha256((ROOT / "bleu" / name).read_bytes()).hexdigest(), expected)
+
+    def test_free_downloads_use_the_official_stores_without_checkout(self):
+        expected = {"ios": "https://apps.apple.com/app/id6535656223",
+                    "android": "https://play.google.com/store/apps/details?id=com.raintoday.rainalerts"}
+        for version in VERSIONS:
+            with self.subTest(version=version):
+                page = Document(ROOT / version / "index.html")
+                stores = [(attrs.get("data-store"), attrs.get("href")) for tag, attrs in page.nodes
+                          if tag == "a" and attrs.get("data-store")]
+                for platform, address in expected.items():
+                    self.assertIn((platform, address), stores)
+                self.assertIn('id="telecharger"', page.source)
+                self.assertLess(page.source.index('id="telecharger"'), page.source.index('<form id="pay-form"'))
+                payment = Document(ROOT / version / "paiement.html")
+                self.assertIn(("index.html#telecharger",), payment.attributes("a", ("href",)))
+
+    def test_maison_et_jardin_keeps_the_gardening_focus(self):
+        for name in PAGES:
+            with self.subTest(page=name):
+                source = (ROOT / name).read_text()
+                self.assertNotRegex(source.lower(), r"\b(moto|motard|motards|trajets?)\b")
+                self.assertRegex(source.lower(), r"\b(arrosage|arroser)\b")
+                self.assertRegex(source.lower(), r"\b(tonte|tondre)\b")
 
 
 if __name__ == "__main__":

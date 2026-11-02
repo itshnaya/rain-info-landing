@@ -86,8 +86,9 @@ footer{padding:1.6em 0;color:var(--muted);font-size:.85rem;text-align:center}
 footer a{color:var(--muted)}
 </style>
 <link rel="stylesheet" href="assets/brand.css">
+<link rel="stylesheet" href="assets/freemium.css">
 </head>
-<body>
+<body class="edition-blue">
 <header>
   <div class="wrap">
     <div class="brand-lockup">
@@ -107,6 +108,7 @@ footer a{color:var(--muted)}
       <li><b>3</b>Téléchargement</li>
     </ol>
     <h1>Votre abonnement Rain Info <span class="brand-by">by Maison et Jardin</span></h1>
+    <p class="checkout-free">Vous préférez commencer gratuitement ? <a href="index.html#telecharger">Télécharger l’app sans abonnement</a>.</p>
     <p style="color:var(--muted)">Plus que quelques secondes. Remplissez ces deux champs, puis passez au paiement.</p>
 
     <div class="layout">
@@ -139,7 +141,7 @@ footer a{color:var(--muted)}
           </div>
           <div class="field">
             <label class="lbl" for="email">Votre adresse e-mail
-              <span class="hint">Nous y enverrons le lien pour installer l'application.</span></label>
+              <span class="hint">Pour retrouver les informations liées à votre souscription.</span></label>
             <input type="email" id="email" name="email" autocomplete="email" inputmode="email" required aria-describedby="err-email">
             <div class="err" id="err-email" role="alert">Cette adresse e-mail ne semble pas complète. Exemple : marie.dupont@gmail.com</div>
           </div>
@@ -162,16 +164,16 @@ footer a{color:var(--muted)}
         <div class="line"><span>Renouvellement</span><span id="s-renew">Chaque année</span></div>
         <div class="line total"><span>À payer aujourd'hui</span><span id="s-price">19,99 €</span></div>
         <ul class="incl">
-          <li>Message avant chaque pluie</li>
-          <li>Radar de pluie en direct</li>
-          <li>Pluie minute par minute</li>
-          <li>Prévisions sur 16 jours</li>
+          <li>Alertes à votre position exacte</li>
+          <li>Radar animé, jusqu’à 2 h d’avance</li>
+          <li>Jusqu’à 4 h de pluie à la minute</li>
+          <li>Prévisions météo étendues, selon la version</li>
           <li>Aucune publicité</li>
         </ul>
         <div class="trust">
           <span>🔒 Paiement sécurisé par carte bancaire</span>
-          <span>✉️ E-mail de rappel avant chaque renouvellement</span>
-          <span>↩️ Arrêt en un clic, sans justification</span>
+          <span>✓ Mode gratuit disponible sans abonnement</span>
+          <span>✓ Premium facultatif, formule au mois ou à l’année</span>
         </div>
       </aside>
     </div>

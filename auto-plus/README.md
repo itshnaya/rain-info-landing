@@ -12,3 +12,7 @@ Copie de la landing Rain Info avec identité Auto Plus, créée le 03/11/2026.
 Lancer les vérifications depuis la racine : `python3 -m unittest discover -s tests -v`.
 
 Présentation enrichie le 03/11/2026 : motards et anticipation des averses avant un trajet, photo d'illustration générée et enregistrée dans `assets/trajet-moto-averse-v1.jpg`, styles complémentaires dans `assets/travel.css`. Prompt exact et provenance consignés dans le README principal. Les scripts d'abonnement, tarifs et contrôles des formulaires sont conservés.
+
+Un exemple clairement illustratif montre les trois informations utiles avant le départ : pluie dans 12 minutes, intensité modérée, fin prévue à 08 h 45. La chronologie ne prétend pas fournir une prévision météo réelle.
+
+Le téléchargement gratuit mène directement aux stores officiels liés depuis https://nowinnov.com/. Le mode gratuit et les fonctions Premium sont comparés ; la page de paiement reste facultative. Détails, sources et différences de plateformes dans le README principal.
