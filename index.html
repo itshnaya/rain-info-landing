@@ -59,9 +59,6 @@ nav.top .btn{min-height:48px;padding:.6em 1.2em;font-size:.95rem}
 .hero h1 span{background:linear-gradient(90deg,var(--cyan),var(--sky2));-webkit-background-clip:text;background-clip:text;color:transparent}
 .cta-row{display:flex;flex-wrap:wrap;gap:1em;align-items:center;margin-top:1.6em}
 .cta-row small{color:#c3d6f7;font-size:.95rem}
-.stores{display:flex;gap:.8em;flex-wrap:wrap;margin-top:1.4em}
-.store{display:flex;align-items:center;gap:.6em;background:#000;color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:12px;padding:.5em 1em;text-decoration:none;font-size:.85rem;line-height:1.2}
-.store b{display:block;font-size:1.05rem}
 
 /* ---------- Téléphone ---------- */
 .phone{position:relative;width:min(320px,82vw);aspect-ratio:9/19;margin:0 auto;border-radius:46px;padding:12px;
@@ -179,6 +176,52 @@ details p{margin:.8em 0 0;color:var(--muted)}
 footer{padding:2.4em 0;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem;text-align:center}
 footer a{color:var(--muted);margin:0 .4em}
 
+
+/* ---------- Galerie d'écrans ---------- */
+.shots{background:linear-gradient(170deg,#eaf2ff,var(--bg))}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .shots{background:linear-gradient(170deg,#0c2149,var(--bg))}}
+:root[data-theme="dark"] .shots{background:linear-gradient(170deg,#0c2149,var(--bg))}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4em;align-items:start}
+.shot{margin:0;text-align:center}
+.shot figcaption{margin-top:1em;font-weight:700;font-family:"Plus Jakarta Sans",sans-serif;font-size:1.02rem}
+.shot figcaption span{display:block;font-family:"Atkinson Hyperlegible",sans-serif;font-weight:400;color:var(--muted);font-size:.9rem}
+.mini{width:100%;max-width:240px;border-radius:38px;padding:9px}
+.mini .screen{border-radius:30px;color:#fff;font-size:.72rem;line-height:1.35;text-align:left}
+.mini .notch{width:70px;height:20px;top:8px}
+.scr-pad{position:absolute;inset:0;padding:38px 12px 12px;display:flex;flex-direction:column;gap:8px;background:linear-gradient(170deg,#0f2f66,#0a1f44)}
+.scr-h{font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:.95rem}
+.scr-s{color:#a9c1ea;font-size:.68rem}
+.tile{background:rgba(255,255,255,.08);border-radius:14px;padding:9px 10px}
+.timeline{position:absolute;left:10px;right:10px;bottom:12px;z-index:4;background:rgba(7,21,48,.9);border-radius:16px;padding:9px 10px}
+.timeline .track{height:6px;border-radius:3px;background:linear-gradient(90deg,var(--rain1),var(--rain2),var(--rain3),rgba(255,255,255,.2));margin:7px 0 4px;position:relative}
+.timeline .track i{position:absolute;left:38%;top:-5px;width:16px;height:16px;border-radius:50%;background:#fff;box-shadow:0 0 0 4px rgba(61,139,255,.5)}
+.timeline .lbl{display:flex;justify-content:space-between;color:#a9c1ea;font-size:.62rem}
+.legend{position:absolute;top:38px;right:10px;z-index:4;background:rgba(7,21,48,.85);border-radius:10px;padding:6px 8px;font-size:.6rem}
+.legend span{display:flex;align-items:center;gap:5px}
+.legend span::before{content:"";width:10px;height:10px;border-radius:3px;background:var(--c)}
+.hours{display:flex;align-items:flex-end;gap:2px;height:90px}
+.hours span{flex:1;border-radius:2px 2px 0 0;background:linear-gradient(to top,var(--rain2),var(--rain1))}
+.hlbl{display:flex;justify-content:space-between;color:#a9c1ea;font-size:.6rem;margin-top:4px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:6px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.row:last-child{border-bottom:0}
+.row .d{width:3.6em;font-weight:700}
+.row .p{color:var(--cyan);font-weight:700;width:2.8em;text-align:right}
+.row .t{color:#cfe0ff;width:4.4em;text-align:right}
+.lock{position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,#3a5fb0,transparent 55%),linear-gradient(170deg,#1b2f5e,#0a1428);padding:44px 10px 12px;display:flex;flex-direction:column;gap:7px}
+.lock .clock{text-align:center;font-family:"Plus Jakarta Sans",sans-serif;font-weight:700;font-size:2.6rem;line-height:1;margin-bottom:2px}
+.lock .date{text-align:center;color:#cfe0ff;font-size:.72rem;margin-bottom:8px}
+.nt{background:rgba(255,255,255,.92);color:#0d1b33;border-radius:14px;padding:8px 9px;display:flex;gap:7px;align-items:flex-start;font-size:.66rem;line-height:1.3}
+.nt i{flex:none;width:24px;height:24px;border-radius:7px;display:grid;place-items:center;font-style:normal;font-size:.8rem;background:linear-gradient(135deg,var(--cyan),var(--sky))}
+.nt b{font-size:.7rem}
+.nt small{display:block;color:#5a6a82;font-size:.58rem}
+@media(max-width:999px){
+  .gallery{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:1em;padding:0 16px 1em;margin:0 -16px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .gallery::-webkit-scrollbar{display:none}
+  .shot{flex:0 0 62%;max-width:250px;scroll-snap-align:center}
+  .swipe{display:block!important}
+}
+.swipe{display:none;text-align:center;color:var(--muted);font-size:.9rem;margin-top:.4em}
+
 /* ---------- Optimisation mobile ---------- */
 .sticky-cta{display:none}
 @media(max-width:879px){
@@ -189,7 +232,6 @@ footer a{color:var(--muted);margin:0 .4em}
   .hero .lead{margin-left:auto;margin-right:auto}
   .cta-row{justify-content:center;flex-direction:column;gap:.6em}
   .cta-row .btn{width:100%;max-width:420px}
-  .stores{justify-content:center}
   .phone{width:min(250px,68vw);border-radius:38px;padding:10px}
   .screen{border-radius:30px}
   .notif{top:40px;font-size:.72rem}
@@ -239,10 +281,6 @@ footer a{color:var(--muted);margin:0 .4em}
           <a class="btn" href="#abonnement">Je m'abonne</a>
           <small>Arrêt en un clic, à tout moment</small>
         </div>
-        <div class="stores" aria-label="Disponible sur">
-          <a class="store" href="#abonnement"><span aria-hidden="true" style="font-size:1.6rem"></span><span>Bientôt sur<b>App Store</b></span></a>
-          <a class="store" href="#abonnement"><span aria-hidden="true" style="font-size:1.4rem">▶</span><span>Bientôt sur<b>Google Play</b></span></a>
-        </div>
       </div>
 
       <div class="phone" role="img" aria-label="Écran de l'application Rain Info : carte radar avec un nuage de pluie qui approche, notification « Pluie dans 12 minutes » et graphique de la prochaine heure.">
@@ -286,7 +324,93 @@ footer a{color:var(--muted);margin:0 .4em}
     </div>
   </section>
 
-  <section style="padding-top:0" aria-label="Rain Info en chiffres">
+  <section class="shots" aria-labelledby="t-shots">
+    <div class="wrap">
+      <div class="center">
+        <span class="kicker">L'application en images</span>
+        <h2 id="t-shots">Clair, lisible, sans complication</h2>
+        <p>De gros chiffres, des couleurs simples : tout se comprend d'un coup d'œil.</p>
+      </div>
+      <div class="gallery">
+
+        <figure class="shot">
+          <div class="phone mini" role="img" aria-label="Écran radar : carte avec les zones de pluie colorées selon leur force et une barre pour voir l'évolution dans l'heure.">
+            <div class="screen" aria-hidden="true">
+              <div class="notch"></div>
+              <div class="map"></div>
+              <div class="cloud c1"></div>
+              <div class="cloud c2"></div>
+              <div class="me"></div>
+              <div class="legend"><span style="--c:var(--rain1)">Faible</span><span style="--c:var(--rain2)">Modérée</span><span style="--c:var(--rain3)">Forte</span></div>
+              <div class="timeline"><b>Radar · 14 h 20</b><div class="track"><i></i></div><div class="lbl"><span>14 h</span><span>14 h 30</span><span>15 h</span></div></div>
+            </div>
+          </div>
+          <figcaption>Le radar en direct<span>La pluie qui avance, en couleurs</span></figcaption>
+        </figure>
+
+        <figure class="shot">
+          <div class="phone mini" role="img" aria-label="Écran de verrouillage avec trois notifications Rain Info : pluie dans 10 minutes, fin de la pluie à 15 h 40, orage prévu ce soir.">
+            <div class="screen" aria-hidden="true">
+              <div class="notch"></div>
+              <div class="lock">
+                <div class="clock">14:02</div>
+                <div class="date">lundi 2 novembre</div>
+                <div class="nt"><i>🌧️</i><div><b>Pluie dans 10 min</b><small>Rain Info · maintenant</small>Pluie modérée chez vous à 14 h 12.</div></div>
+                <div class="nt"><i>🌤️</i><div><b>Fin de la pluie à 15 h 40</b><small>Rain Info · il y a 2 min</small>Le temps de ressortir après.</div></div>
+                <div class="nt"><i>⛈️</i><div><b>Orage ce soir</b><small>Rain Info · ce matin</small>Vers 21 h. Rentrez le salon de jardin.</div></div>
+              </div>
+            </div>
+          </div>
+          <figcaption>Les alertes<span>Prévenu, même téléphone verrouillé</span></figcaption>
+        </figure>
+
+        <figure class="shot">
+          <div class="phone mini" role="img" aria-label="Écran des 48 prochaines heures : graphique de pluie heure par heure et résumé : pluie cet après-midi, sec demain matin.">
+            <div class="screen" aria-hidden="true">
+              <div class="notch"></div>
+              <div class="scr-pad">
+                <div><div class="scr-h">48 prochaines heures</div><div class="scr-s">Chez vous</div></div>
+                <div class="tile">
+                  <div class="hours">
+                    <span style="height:5%"></span><span style="height:10%"></span><span style="height:35%"></span><span style="height:80%"></span><span style="height:95%"></span><span style="height:60%"></span><span style="height:25%"></span><span style="height:5%"></span><span style="height:3%"></span><span style="height:3%"></span><span style="height:3%"></span><span style="height:8%"></span><span style="height:20%"></span><span style="height:45%"></span><span style="height:30%"></span><span style="height:10%"></span>
+                  </div>
+                  <div class="hlbl"><span>Auj.</span><span>Ce soir</span><span>Demain</span></div>
+                </div>
+                <div class="tile">☔ <b>Cet après-midi</b><br><span class="scr-s">Pluie de 14 h à 16 h</span></div>
+                <div class="tile">☀️ <b>Demain matin</b><br><span class="scr-s">Temps sec, idéal pour le jardin</span></div>
+              </div>
+            </div>
+          </div>
+          <figcaption>Les 48 heures<span>Aujourd'hui et demain en un coup d'œil</span></figcaption>
+        </figure>
+
+        <figure class="shot">
+          <div class="phone mini" role="img" aria-label="Écran des prévisions sur 16 jours : liste des jours avec icône météo, risque de pluie et températures.">
+            <div class="screen" aria-hidden="true">
+              <div class="notch"></div>
+              <div class="scr-pad">
+                <div><div class="scr-h">Prévisions 16 jours</div><div class="scr-s">Risque de pluie · températures</div></div>
+                <div class="tile" style="padding:4px 10px">
+                  <div class="row"><span class="d">Lun.</span><span>🌧️</span><span class="p">80 %</span><span class="t">8° / 13°</span></div>
+                  <div class="row"><span class="d">Mar.</span><span>🌦️</span><span class="p">40 %</span><span class="t">7° / 12°</span></div>
+                  <div class="row"><span class="d">Mer.</span><span>☀️</span><span class="p">5 %</span><span class="t">6° / 14°</span></div>
+                  <div class="row"><span class="d">Jeu.</span><span>⛅</span><span class="p">15 %</span><span class="t">7° / 13°</span></div>
+                  <div class="row"><span class="d">Ven.</span><span>🌧️</span><span class="p">70 %</span><span class="t">9° / 12°</span></div>
+                  <div class="row"><span class="d">Sam.</span><span>⛅</span><span class="p">20 %</span><span class="t">8° / 15°</span></div>
+                  <div class="row"><span class="d">Dim.</span><span>☀️</span><span class="p">5 %</span><span class="t">6° / 16°</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <figcaption>Les 16 jours<span>Pour prévoir sorties et jardinage</span></figcaption>
+        </figure>
+
+      </div>
+      <p class="swipe" aria-hidden="true">← Faites glisser pour voir les autres écrans →</p>
+    </div>
+  </section>
+
+  <section aria-label="Rain Info en chiffres">
     <div class="wrap">
       <div class="band">
         <div><b>1 min</b><span>de précision sur l'arrivée de la pluie</span></div>
