@@ -1,86 +1,86 @@
 /* Maison et Jardin : le magazine donne son identité à l'ensemble du service. */
 :root{
   color-scheme:light;
-  --night:#1b1916;--night2:#363028;--sky:#776047;--sky2:#d3bda4;--cyan:#eadfce;
-  --bg:#faf9f6;--surface:#fff;--ink:#1a1a1a;--muted:#59544e;--line:#ded8cf;
-  --ok:#526443;--focus:#8b5c22;
+  --night:#1a1a1a;--night2:#1a1a1a;--sky:#8b7355;--sky2:#e5e7eb;--cyan:#f3f4f6;
+  --bg:#ffffff;--surface:#fff;--ink:#1a1a1a;--muted:#525252;--line:#e5e7eb;
+  --ok:#526443;--focus:#8b7355;
 }
 body{font-family:"Inter",system-ui,sans-serif;background:var(--bg);color:var(--ink)}
 h1,h2,h3{font-family:"Montserrat",system-ui,sans-serif;font-weight:700}
-.hero{background:#f7f5f1;color:var(--ink)}
+.hero{background:#ffffff;color:var(--ink)}
 .hero::after{display:none}
-.magazine-bar{background:#161513;color:#fff;font-family:"Montserrat",sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.magazine-bar{background:#000000;color:#fff;font-family:"Montserrat",sans-serif;font-size:.63rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
 .magazine-bar .wrap{display:flex;justify-content:space-between;gap:1rem;padding:10px 16px}
 .magazine-masthead{background:#fff;text-align:center;padding:22px 16px 18px}
 .publisher-logo{display:block;width:220px;height:96px;object-fit:cover;object-position:50% 54%;background:#fff;border:0;border-radius:0}
 .masthead-logo{width:300px;height:130px;max-width:100%;margin:0 auto}
-.magazine-masthead p{margin:12px 0 0;color:#75674f;font-family:"Montserrat",sans-serif;font-size:.61rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase}
+.magazine-masthead p{margin:12px 0 0;color:#1a1a1a;font-family:"Montserrat",sans-serif;font-size:.61rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase}
 nav.top,.payment-top{border-top:1px solid var(--line);border-bottom:1px solid var(--line);gap:1rem;padding:14px 0}
 .service-name{color:var(--ink);font-family:"Montserrat",sans-serif;font-size:.9rem;font-weight:700;text-decoration:none;line-height:1.35}
-.service-name span{display:block;color:#776047;font-family:"Playfair Display",Georgia,serif;font-size:1rem;font-weight:600}
+.service-name span{display:block;color:#8b7355;font-family:"Playfair Display",Georgia,serif;font-size:1rem;font-weight:600}
 .service-navigation{display:flex;align-items:center;gap:1.5rem}
 .service-navigation>a:not(.btn){color:var(--ink);text-decoration:none;font-size:.8rem}
 .service-navigation>a:not(.btn):hover{text-decoration:underline;text-underline-offset:5px}
 .hero-in{padding:3em 0 3.8em;gap:3em}
 .hero-brand{font-family:"Montserrat",sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.5rem}
-.hero-brand span{display:block;font-family:"Playfair Display",Georgia,serif;font-size:clamp(1.45rem,3.4vw,1.9rem);font-weight:600;letter-spacing:0;text-transform:none;color:#715b40;line-height:1.25;margin-top:.15em}
+.hero-brand span{display:block;font-family:"Playfair Display",Georgia,serif;font-size:clamp(1.45rem,3.4vw,1.9rem);font-weight:600;letter-spacing:0;text-transform:none;color:#8b7355;line-height:1.25;margin-top:.15em}
 .hero h1{font-family:"Playfair Display",Georgia,serif;font-size:clamp(2.1rem,5.2vw,3.2rem);font-weight:500;line-height:1.14;letter-spacing:-.025em}
-.hero h1 span{background:none;color:#7b664c;-webkit-text-fill-color:currentColor}
-.pill{background:none;border:0;border-radius:0;padding:0;color:#6b5a43;font-family:"Montserrat",sans-serif;font-size:.73rem;font-weight:600;letter-spacing:.04em;margin-bottom:1em}
+.hero h1 span{background:none;color:#8b7355;-webkit-text-fill-color:currentColor}
+.pill{background:none;border:0;border-radius:0;padding:0;color:#1a1a1a;font-family:"Montserrat",sans-serif;font-size:.73rem;font-weight:600;letter-spacing:.04em;margin-bottom:1em}
 .hero .lead{color:var(--muted);font-size:1.1rem;max-width:38ch;line-height:1.7}
 .brand-by{display:inline;font-size:1em;font-weight:600}
-.btn{background:#1b1916;color:#fff;border:1px solid #1b1916;border-radius:3px;box-shadow:none;font-family:"Montserrat",sans-serif;font-weight:600;letter-spacing:0}
-.btn:hover{background:#715b40;border-color:#715b40;transform:none;filter:none}
+.btn{background:#1a1a1a;color:#fff;border:1px solid #1a1a1a;border-radius:3px;box-shadow:none;font-family:"Montserrat",sans-serif;font-weight:600;letter-spacing:0}
+.btn:hover{background:#8b7355;border-color:#8b7355;transform:none;filter:none}
 .btn.light{background:#fff;color:var(--ink);border-color:var(--line)}
 .cta-row small{color:var(--muted)}
-.store{border-radius:4px;border-color:#1b1916}
-.hero .phone{background:linear-gradient(145deg,#49463f,#171613);box-shadow:0 24px 50px rgba(40,33,23,.18),inset 0 0 0 2px rgba(255,255,255,.12)}
-.kicker{color:#7b664c;font-family:"Montserrat",sans-serif;font-weight:600}
+.store{border-radius:4px;border-color:#1a1a1a}
+.hero .phone{background:linear-gradient(145deg,#404040,#1a1a1a);box-shadow:0 24px 50px rgba(40,33,23,.18),inset 0 0 0 2px rgba(255,255,255,.12)}
+.kicker{color:#8b7355;font-family:"Montserrat",sans-serif;font-weight:600}
 .card{border-color:var(--line);border-radius:6px;box-shadow:none}
-.card .ico{border-radius:4px;background:#eee8de}
-.shots{background:#f0ede7}
+.card .ico{border-radius:4px;background:#f3f4f6}
+.shots{background:#fafafa}
 .band{background:#fff;border:1px solid var(--line);border-radius:0;color:var(--ink)}
-.band b{background:none;color:#7b664c;-webkit-text-fill-color:currentColor;font-family:"Montserrat",sans-serif;font-weight:600}
+.band b{background:none;color:#8b7355;-webkit-text-fill-color:currentColor;font-family:"Montserrat",sans-serif;font-weight:600}
 .band span{color:var(--muted)}
-.step::before{background:#e8dfd1;color:var(--ink)}
+.step::before{background:#f3f4f6;color:var(--ink)}
 .cmp-wrap{border-radius:6px;box-shadow:none}
-table.cmp .pro{background:#f0ebe2}
+table.cmp .pro{background:#f3f4f6}
 table.cmp thead th.pro{border-radius:4px 4px 0 0}
 table.cmp tbody tr:last-child td.pro{border-radius:0 0 4px 4px}
-.mk.y,.incl li::before{background:#e8dfd1;color:#30271c;box-shadow:none}
-.lim{background:#f0ede7;color:var(--muted)}
-#abonnement{background:#eee9e1;color:var(--ink)}
+.mk.y,.incl li::before{background:#f3f4f6;color:#1a1a1a;box-shadow:none}
+.lim{background:#fafafa;color:var(--muted)}
+#abonnement{background:#fafafa;color:var(--ink)}
 #abonnement .center p,.plan p,.price small{color:var(--muted)}
 .section-signature{font-family:"Montserrat",sans-serif;font-size:.8rem;line-height:1.5;margin-bottom:1.2rem}
-.section-signature strong{display:block;color:#715b40;font-family:"Playfair Display",Georgia,serif;font-size:1.6rem;font-weight:600}
-#abonnement .section-signature strong{color:#715b40}
+.section-signature strong{display:block;color:#8b7355;font-family:"Playfair Display",Georgia,serif;font-size:1.6rem;font-weight:600}
+#abonnement .section-signature strong{color:#8b7355}
 .plan{background:#fff;border:2px solid var(--line);border-radius:6px}
-.plan:has(input:checked){border-color:#7b664c;background:#faf7f1}
-#pay-form .plan .check{border-color:#b4a58f}
-#pay-form .plan:has(input:checked) .check{border-color:#7b664c;background:#7b664c;box-shadow:inset 0 0 0 5px #fff}
-.badge,.plan .tag{background:#e8dfd1;color:#3e3324;border-radius:2px;font-weight:600}
+.plan:has(input:checked){border-color:#8b7355;background:#ffffff}
+#pay-form .plan .check{border-color:#8b7355}
+#pay-form .plan:has(input:checked) .check{border-color:#8b7355;background:#8b7355;box-shadow:inset 0 0 0 5px #fff}
+.badge,.plan .tag{background:#f3f4f6;color:#1a1a1a;border-radius:2px;font-weight:600}
 .reassure li{color:var(--muted)}
-.reassure li::before{background:#e3dacb;color:#5d4a32}
+.reassure li::before{background:#f3f4f6;color:#1a1a1a}
 details{border-radius:4px}
 .lock{gap:4px}
 .lock .date{margin-bottom:4px}
 .lock .nt .brand-by{display:inline;font-size:inherit;font-weight:400}
 .final .btn{display:inline-block;max-width:100%;text-align:center}
-footer{background:#1b1916;border-color:#1b1916;color:#eee7dd}
-footer a{color:#eee7dd}
+footer{background:#1a1a1a;border-color:#1a1a1a;color:#ffffff}
+footer a{color:#ffffff}
 .footer-publisher{margin:0 auto 1rem}
-.footer-signature{font-family:"Playfair Display",Georgia,serif;font-size:1.2rem;color:#e6d8c3}
+.footer-signature{font-family:"Playfair Display",Georgia,serif;font-size:1.2rem;color:#ffffff}
 header.payment-header{background:#fff;color:var(--ink)}
 .payment-header .magazine-bar .wrap{padding:10px 16px}
 .payment-header .payment-top{padding:14px 16px;flex-wrap:wrap}
-.secure{color:#6b5a43}
-.payment-header~main h1 .brand-by{display:block;color:#715b40;font-family:"Playfair Display",Georgia,serif;font-weight:600;margin-top:.3em;font-size:.9em}
-.steps li[aria-current] b{background:#1b1916;color:#fff}
-.plan .tag{background:#e8dfd1}
+.secure{color:#1a1a1a}
+.payment-header~main h1 .brand-by{display:block;color:#8b7355;font-family:"Playfair Display",Georgia,serif;font-weight:600;margin-top:.3em;font-size:.9em}
+.steps li[aria-current] b{background:#1a1a1a;color:#fff}
+.plan .tag{background:#f3f4f6}
 input[type=text],input[type=email]{background:#fff;border-color:var(--line);border-radius:4px}
 input[type=text]:focus,input[type=email]:focus{border-color:#8b7355;box-shadow:0 0 0 3px rgba(139,115,85,.18)}
 input[aria-invalid=true]{border-color:var(--err)}
-#msg{background:#f0ebe2;border-color:#8b7355;border-radius:4px}
+#msg{background:#f3f4f6;border-color:#8b7355;border-radius:4px}
 @media(min-width:880px){.hero-in{grid-template-columns:1.15fr .85fr}}
 @media(max-width:879px){
   .hero-in{text-align:left;padding:2em 0 3em;gap:2em}
@@ -89,8 +89,8 @@ input[aria-invalid=true]{border-color:var(--err)}
   .cta-row .btn{max-width:none}
   .cta-row small{text-align:center}
   .card,.band{border-radius:6px}
-  .sticky-cta{background:rgba(27,25,22,.97);box-shadow:0 -3px 15px rgba(0,0,0,.1)}
-  .sticky-cta .btn{background:#eadfce;color:#30271c;border-color:#eadfce}
+  .sticky-cta{background:rgba(26,26,26,.97);box-shadow:0 -3px 15px rgba(0,0,0,.1)}
+  .sticky-cta .btn{background:#f3f4f6;color:#1a1a1a;border-color:#f3f4f6}
 }
 @media(max-width:620px){
   .magazine-bar .wrap{justify-content:center;text-align:center;font-size:.58rem}
@@ -114,3 +114,11 @@ input[aria-invalid=true]{border-color:var(--err)}
   .band b{font-size:1.3rem}
   .hero-brand span{font-size:1.35rem}
 }
+
+/* Le brun de référence reste réservé aux grands accents et aux bordures. */
+.kicker,table.cmp thead th.pro em,.back{color:#1a1a1a}
+.payment-header~main .back{color:#1a1a1a!important}
+
+/* Petits libellés et boutons : noir sur blanc pour conserver la lisibilité. */
+.service-name span{color:#1a1a1a}
+.btn:hover{background:#1a1a1a;border-color:#8b7355}

@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Rain Info by Maison et Jardin · Paiement</title>
+<meta name="theme-color" content="#0a1f44">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#0a1f44; --night2:#123a7a; --sky:#3d8bff; --sky2:#7cc4ff; --cyan:#4fe0ff;
+  --bg:#f3f7fd; --surface:#ffffff; --ink:#0d1b33; --muted:#43526b; --line:#c9d7ea;
+  --ok:#0f7a45; --err:#b3261e; --focus:#ffb000;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#071530; --surface:#0f2550; --ink:#eef4ff; --muted:#b9c8e3; --line:#2b4b85; --ok:#4fd98e; --err:#ff8a80; }
+}
+:root[data-theme="dark"]{ --bg:#071530; --surface:#0f2550; --ink:#eef4ff; --muted:#b9c8e3; --line:#2b4b85; --ok:#4fd98e; --err:#ff8a80; }
+*{box-sizing:border-box}
+html{font-size:118.75%}
+@media(max-width:879px){html{font-size:112.5%}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Atkinson Hyperlegible",system-ui,sans-serif;line-height:1.6}
+h1,h2,h3{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-weight:800;line-height:1.2;margin:0 0 .5em}
+h1{font-size:clamp(1.7rem,5vw,2.3rem)} h2{font-size:1.2rem}
+p{margin:0 0 1em}
+:focus-visible{outline:4px solid var(--focus);outline-offset:3px;border-radius:8px}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+header{background:linear-gradient(170deg,var(--night),var(--night2));color:#fff}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1em;padding:1em 16px}
+.logo{display:flex;align-items:center;gap:.55em;color:#fff;text-decoration:none;font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:1.25rem}
+.logo i{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-style:normal;background:linear-gradient(135deg,var(--cyan),var(--sky))}
+.back{color:#d7e6ff;font-size:.95rem}
+.secure{display:flex;align-items:center;gap:.4em;color:#d7e6ff;font-size:.9rem}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px}
+main{padding:2em 0 3em}
+.steps{display:flex;gap:.5em;list-style:none;padding:0;margin:0 0 1.6em;font-size:.9rem;color:var(--muted);flex-wrap:wrap}
+.steps li{display:flex;align-items:center;gap:.4em}
+.steps li b{width:1.8em;height:1.8em;border-radius:50%;display:grid;place-items:center;background:var(--line);color:var(--ink);font-size:.85rem}
+.steps li[aria-current] {color:var(--ink);font-weight:700}
+.steps li[aria-current] b{background:linear-gradient(135deg,var(--cyan),var(--sky));color:#06183a}
+.steps li+li::before{content:"›";margin-right:.3em}
+.layout{display:grid;gap:1.6em;align-items:start}
+@media(min-width:860px){.layout{grid-template-columns:1.3fr .9fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:1.6em;box-shadow:0 10px 30px rgba(13,40,90,.07)}
+fieldset{border:0;padding:0;margin:0 0 1.4em}
+legend{font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:1.15rem;margin-bottom:.8em;padding:0}
+.plans{display:grid;gap:.8em}
+@media(min-width:560px){.plans{grid-template-columns:1fr 1fr}}
+.plan{position:relative;display:block;cursor:pointer;border:3px solid var(--line);border-radius:18px;padding:1em 1.1em;background:var(--bg)}
+.plan:has(input:checked){border-color:var(--sky);background:linear-gradient(180deg,rgba(79,224,255,.12),rgba(61,139,255,.12))}
+.plan:has(input:focus-visible){outline:4px solid var(--focus);outline-offset:3px}
+.plan input{position:absolute;opacity:0;pointer-events:none}
+.plan b{display:block;font-family:"Plus Jakarta Sans",sans-serif;font-size:1.05rem}
+.plan .pr{font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:1.5rem}
+.plan small{display:block;color:var(--muted);font-size:.85rem}
+.plan .tag{position:absolute;top:-.8em;right:.8em;background:linear-gradient(90deg,var(--cyan),var(--sky2));color:#06183a;border-radius:999px;padding:.1em .7em;font-size:.75rem;font-weight:800}
+.field{margin-bottom:1.1em}
+label.lbl{display:block;font-weight:700;margin-bottom:.35em}
+.hint{display:block;font-weight:400;color:var(--muted);font-size:.88rem}
+input[type=text],input[type=email]{width:100%;font:inherit;font-size:1.1rem;color:var(--ink);background:var(--bg);border:2px solid var(--line);border-radius:14px;padding:.8em .9em;min-height:58px}
+input[type=text]:focus,input[type=email]:focus{border-color:var(--sky);outline:none;box-shadow:0 0 0 4px rgba(61,139,255,.25)}
+input[aria-invalid=true]{border-color:var(--err)}
+.err{display:none;color:var(--err);font-weight:700;font-size:.92rem;margin-top:.35em}
+.err.show{display:block}
+.check{display:flex;gap:.7em;align-items:flex-start;cursor:pointer;margin-bottom:1.2em}
+.check input{flex:none;width:28px;height:28px;margin:.1em 0 0;accent-color:var(--sky)}
+.btn{display:flex;width:100%;align-items:center;justify-content:center;gap:.5em;border:0;border-radius:999px;padding:.9em 1.4em;min-height:64px;
+  font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:1.15rem;cursor:pointer;
+  background:linear-gradient(135deg,var(--cyan),var(--sky));color:#06183a;box-shadow:0 10px 30px rgba(61,139,255,.4)}
+.btn:hover{filter:brightness(1.05)}
+.note{text-align:center;color:var(--muted);font-size:.88rem;margin:.8em 0 0}
+#msg{display:none;margin-top:1.2em;padding:1.1em 1.2em;border-radius:16px;background:linear-gradient(180deg,rgba(79,224,255,.14),rgba(61,139,255,.14));border:2px solid var(--sky)}
+#msg.show{display:block}
+.sum h2{margin-bottom:.8em}
+.sum .line{display:flex;justify-content:space-between;gap:1em;padding:.6em 0;border-bottom:1px solid var(--line)}
+.sum .total span:last-child{white-space:nowrap}
+.sum .total{font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:1.25rem;border-bottom:0;padding-top:.9em}
+.incl{list-style:none;padding:0;margin:1.2em 0 0;display:grid;gap:.5em}
+.incl li{display:flex;gap:.6em;align-items:flex-start}
+.incl li::before{content:"✓";flex:none;width:1.6em;height:1.6em;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--cyan),var(--sky));color:#06183a;font-weight:800;font-size:.85rem}
+.trust{margin-top:1.2em;padding-top:1em;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem;display:grid;gap:.4em}
+footer{padding:1.6em 0;color:var(--muted);font-size:.85rem;text-align:center}
+footer a{color:var(--muted)}
+</style>
+<link rel="stylesheet" href="assets/brand.css">
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand-lockup">
+      <a class="logo" href="index.html" aria-label="Rain Info by Maison et Jardin, retour à l'accueil"><i aria-hidden="true">🌧️</i><span class="brand-name">Rain Info<small>by Maison et Jardin</small></span></a>
+      <img class="publisher-logo" src="assets/maison-et-jardin.png" width="144" height="64" alt="Maison et Jardin">
+    </div>
+    <span class="secure"><span aria-hidden="true">🔒</span> Paiement sécurisé</span>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <p><a class="back" style="color:var(--sky)" href="index.html#abonnement">← Retour aux formules</a></p>
+    <ol class="steps" aria-label="Étapes">
+      <li aria-current="step"><b>1</b>Vos informations</li>
+      <li><b>2</b>Paiement</li>
+      <li><b>3</b>Téléchargement</li>
+    </ol>
+    <h1>Votre abonnement Rain Info <span class="brand-by">by Maison et Jardin</span></h1>
+    <p style="color:var(--muted)">Plus que quelques secondes. Remplissez ces deux champs, puis passez au paiement.</p>
+
+    <div class="layout">
+      <form id="form" class="card" novalidate>
+        <fieldset>
+          <legend>1. Votre formule</legend>
+          <div class="plans">
+            <label class="plan">
+              <input type="radio" name="plan" value="annuel" checked>
+              <span class="tag">Le plus avantageux</span>
+              <b>Un an</b>
+              <span class="pr">19,99 €</span>
+              <small>Soit 1,67 € par mois</small>
+            </label>
+            <label class="plan">
+              <input type="radio" name="plan" value="mensuel">
+              <b>Un mois</b>
+              <span class="pr">1,99 €</span>
+              <small>Arrêt quand vous voulez</small>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>2. Vos informations</legend>
+          <div class="field">
+            <label class="lbl" for="nom">Votre nom et prénom</label>
+            <input type="text" id="nom" name="nom" autocomplete="name" required aria-describedby="err-nom">
+            <div class="err" id="err-nom" role="alert">Merci d'indiquer votre nom.</div>
+          </div>
+          <div class="field">
+            <label class="lbl" for="email">Votre adresse e-mail
+              <span class="hint">Nous y enverrons le lien pour installer l'application.</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" inputmode="email" required aria-describedby="err-email">
+            <div class="err" id="err-email" role="alert">Cette adresse e-mail ne semble pas complète. Exemple : marie.dupont@gmail.com</div>
+          </div>
+        </fieldset>
+
+        <label class="check">
+          <input type="checkbox" id="cgv" name="cgv" required aria-describedby="err-cgv">
+          <span>J'accepte les <a href="#" style="color:var(--sky)">conditions de vente</a>. Je peux arrêter mon abonnement à tout moment, en un clic.</span>
+        </label>
+        <div class="err" id="err-cgv" role="alert" style="margin:-.8em 0 1em">Merci de cocher cette case pour continuer.</div>
+
+        <button class="btn" type="submit">Passer au paiement 🔒</button>
+        <p class="note">Vous allez être dirigé vers notre page de paiement sécurisé par carte bancaire.</p>
+        <div id="msg" role="status" aria-live="polite"></div>
+      </form>
+
+      <aside class="card sum" aria-labelledby="t-sum">
+        <h2 id="t-sum">Récapitulatif</h2>
+        <div class="line"><span>Formule</span><b id="s-plan">Un an</b></div>
+        <div class="line"><span>Renouvellement</span><span id="s-renew">Chaque année</span></div>
+        <div class="line total"><span>À payer aujourd'hui</span><span id="s-price">19,99 €</span></div>
+        <ul class="incl">
+          <li>Message avant chaque pluie</li>
+          <li>Radar de pluie en direct</li>
+          <li>Pluie minute par minute</li>
+          <li>Prévisions sur 16 jours</li>
+          <li>Aucune publicité</li>
+        </ul>
+        <div class="trust">
+          <span>🔒 Paiement sécurisé par carte bancaire</span>
+          <span>✉️ E-mail de rappel avant chaque renouvellement</span>
+          <span>↩️ Arrêt en un clic, sans justification</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img class="publisher-logo footer-publisher" src="assets/maison-et-jardin.png" width="144" height="64" alt="Maison et Jardin" loading="lazy">
+    © 2026 Rain Info <span class="brand-by">by Maison et Jardin</span> · <a href="#">Mentions légales</a> · <a href="#">Conditions de vente</a> · <a href="#">Confidentialité</a>
+  </div>
+</footer>
+
+<script>
+/* À remplir plus tard : liens Stripe Payment Links (publics, pas de secret).
+   L'e-mail saisi sera pré-rempli chez Stripe via ?prefilled_email=. */
+const PAYMENT_LINKS = { annuel: "", mensuel: "" };
+const PLANS = {
+  annuel:  { nom: "Un an",   prix: "19,99 €", renew: "Chaque année" },
+  mensuel: { nom: "Un mois", prix: "1,99 €",  renew: "Chaque mois" }
+};
+
+const form = document.getElementById("form");
+const radios = form.querySelectorAll('input[name="plan"]');
+
+/* Formule reçue depuis la page d'accueil : paiement.html?plan=mensuel */
+const fromUrl = new URLSearchParams(location.search).get("plan");
+if (PLANS[fromUrl]) form.querySelector('input[value="' + fromUrl + '"]').checked = true;
+
+function majRecap() {
+  const p = PLANS[form.plan.value];
+  document.getElementById("s-plan").textContent = p.nom;
+  document.getElementById("s-price").textContent = p.prix;
+  document.getElementById("s-renew").textContent = p.renew;
+}
+radios.forEach(r => r.addEventListener("change", majRecap));
+majRecap();
+
+function setErr(input, errId, bad) {
+  document.getElementById(errId).classList.toggle("show", bad);
+  input.setAttribute("aria-invalid", bad ? "true" : "false");
+  return bad;
+}
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const nom = form.nom, email = form.email, cgv = form.cgv;
+  const badNom = setErr(nom, "err-nom", nom.value.trim().length < 2);
+  const badMail = setErr(email, "err-email", !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.value.trim()));
+  const badCgv = setErr(cgv, "err-cgv", !cgv.checked);
+  if (badNom) return nom.focus();
+  if (badMail) return email.focus();
+  if (badCgv) return cgv.focus();
+
+  const plan = form.plan.value;
+  const url = PAYMENT_LINKS[plan];
+  if (url) {
+    location.href = url + (url.includes("?") ? "&" : "?") + "prefilled_email=" + encodeURIComponent(email.value.trim());
+    return;
+  }
+  /* Pas encore de paiement branché : rien n'est envoyé ni enregistré. */
+  const msg = document.getElementById("msg");
+  msg.textContent = "Merci " + nom.value.trim().split(" ")[0] + " ! Le paiement en ligne ouvre très bientôt. Aucun montant n'a été prélevé.";
+  msg.classList.add("show");
+  msg.scrollIntoView({ behavior: "smooth", block: "center" });
+});
+</script>
+</body>
+</html>
