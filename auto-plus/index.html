@@ -275,7 +275,7 @@ footer a{color:var(--muted);margin:0 .4em}
 <header class="hero">
   <div class="magazine-bar"><div class="wrap"><span>Auto · Route · Quotidien</span><span>Les services Auto Plus</span></div></div>
   <div class="magazine-masthead">
-    <img class="publisher-logo masthead-logo" src="assets/auto-plus.jpg" width="150" height="150" alt="Auto Plus">
+    <img class="publisher-logo masthead-logo" src="assets/auto-plus-hd-v2.jpg" width="150" height="150" alt="Auto Plus">
     <p>La météo avant de prendre la route</p>
   </div>
   <div class="wrap">
@@ -283,7 +283,7 @@ footer a{color:var(--muted);margin:0 .4em}
       <a class="service-name" href="#" aria-label="Rain Info by Auto Plus, accueil">Rain Info <span>by Auto Plus</span></a>
       <div class="service-navigation">
         <a href="#t-fonc">Le service</a>
-        <a href="#t-shots">L’application</a>
+        <a href="#comparatif">Gratuit et Premium</a>
         <a class="btn" href="#telecharger">Télécharger</a>
       </div>
     </nav>
@@ -291,11 +291,11 @@ footer a{color:var(--muted);margin:0 .4em}
       <div class="hero-copy">
         <p class="hero-brand">Rain Info <span>by Auto Plus</span></p>
         <span class="pill">☔ Le réflexe météo avant de partir à moto</span>
-        <h1>La pluie arrive ?<br><span>Vous le savez avant.</span></h1>
-        <p class="lead">À moto, préparez votre départ : voyez dans combien de temps la pluie arrive, son intensité et sa fin prévue.</p>
+        <h1>À moto, anticipez<br><span>la prochaine averse.</span></h1>
+        <p class="lead">Avant d’enfiler votre casque, voyez quand la pluie commence et s’arrête. Préparez votre tenue ou choisissez un meilleur moment pour partir.</p>
         <div class="cta-row">
           <a class="btn" href="#telecharger">Télécharger gratuitement</a>
-          <a class="premium-link" href="#abonnement">Découvrir Premium</a>
+          <a class="premium-link" href="#comparatif">Gratuit ou Premium ?</a>
         </div>
         <p class="free-note">Mode gratuit disponible · Premium facultatif</p>
         <div class="stores" id="telecharger" aria-label="Télécharger gratuitement Rain Now">
@@ -305,24 +305,10 @@ footer a{color:var(--muted);margin:0 .4em}
         <p class="store-note">Sur les stores, l’application s’appelle Rain Now.</p>
       </div>
 
-      <div class="phone" role="img" aria-label="Écran de l'application Rain Info by Auto Plus : carte radar avec un nuage de pluie qui approche, notification « Pluie dans 12 minutes » et graphique de la prochaine heure.">
-        <div class="screen" aria-hidden="true">
-          <div class="notch"></div>
-          <div class="map"></div>
-          <div class="cloud c1"></div>
-          <div class="cloud c2"></div>
-          <div class="me"></div>
-          <div class="notif"><i>🌧️</i><div><b>Pluie dans 12 min</b><br>Préparez votre équipement de pluie.</div></div>
-          <div class="sheet">
-            <b>Pluie modérée à 14 h 12</b>
-            <small>Exemple illustratif · Fin vers 14 h 45</small>
-            <div class="chart">
-              <span style="height:4%"></span><span style="height:4%"></span><span style="height:6%"></span><span style="height:18%"></span><span style="height:42%"></span><span style="height:70%"></span><span style="height:92%"></span><span style="height:85%"></span><span style="height:60%"></span><span style="height:35%"></span><span style="height:15%"></span><span style="height:5%"></span>
-            </div>
-            <div class="chart-x"><span>Maint.</span><span>+15</span><span>+30</span><span>+45</span><span>+60 min</span></div>
-          </div>
-        </div>
-      </div>
+      <figure class="rider-visual">
+        <img class="rider-photo" src="assets/motard-sous-pluie-v2.jpg" width="1122" height="1402" alt="Un motard équipé d’un casque intégral et d’une tenue de pluie roule sur une route de campagne mouillée, sous une averse." fetchpriority="high" decoding="async">
+        <div class="rider-alert"><span class="alert-example">Exemple de prévision à 08 h 00</span><div class="rider-countdown"><strong>12 <small>min</small></strong><span>avant les premières gouttes</span></div><p>Pluie modérée <span aria-hidden="true">·</span> Fin prévue à 08 h 45</p></div>
+      </figure>
     </div>
   </div>
 </header>
@@ -332,111 +318,39 @@ footer a{color:var(--muted);margin:0 .4em}
     <div class="wrap">
       <div class="center">
         <span class="kicker">Fonctionnalités</span>
-        <h2 id="t-fonc">Tout ce qu'il faut pour ne plus être surpris</h2>
-        <p>Les informations utiles pour choisir votre départ et préparer votre équipement.</p>
+        <h2 id="t-fonc">Votre prochaine sortie se prépare ici.</h2>
+        <p>Trois bonnes raisons de consulter la météo avant de prendre la route.</p>
       </div>
       <div class="feat">
-        <div class="card"><div class="ico" aria-hidden="true">⏱️</div><h3>La pluie à la minute</h3><p>Début, intensité et fin sur la prochaine heure, gratuitement.</p></div>
-        <div class="card"><div class="ico" aria-hidden="true">🔔</div><h3>Prévenu avant l’averse</h3><p>Des alertes pour votre ville, pour prévoir votre tenue avant de partir.</p></div>
-        <div class="card"><div class="ico" aria-hidden="true">📅</div><h3>La météo sur 7 jours</h3><p>Les prévisions de la semaine, incluses dans le mode gratuit.</p></div>
-        <div class="card"><div class="ico" aria-hidden="true">🗺️</div><h3>Le radar animé</h3><p>Avec Premium, voyez les averses se déplacer jusqu’à 2 h à l’avance.</p></div>
-        <div class="card"><div class="ico" aria-hidden="true">📊</div><h3>Voir plus loin</h3><p>Avec Premium, jusqu’à 4 h de pluie à la minute et 4 jours heure par heure.</p></div>
-        <div class="card"><div class="ico" aria-hidden="true">🚫</div><h3>Sans publicité</h3><p>Premium retire les publicités et ajoute les alertes à votre position exacte.</p></div>
+        <article class="card"><div class="ico" aria-hidden="true">⏱️</div><h3>Choisir quand partir</h3><p>Repérez le début, l’intensité et la fin prévue de la pluie avant de démarrer.</p></article>
+        <article class="card"><div class="ico" aria-hidden="true">🌧️</div><h3>Prévoir la bonne tenue</h3><p>Une averse approche ? Emportez votre combinaison et vos gants adaptés avant de monter à moto.</p></article>
+        <article class="card"><div class="ico" aria-hidden="true">☕</div><h3>Adapter votre pause</h3><p>Consultez la fin prévue de l’averse pour décider de patienter ou d’ajuster votre départ.</p></article>
       </div>
     </div>
   </section>
 
-  <section class="shots" aria-labelledby="t-shots">
+  <section class="rider-comparison" id="comparatif" aria-labelledby="t-comparatif">
     <div class="wrap">
-      <div class="center">
-        <span class="kicker">L'application en images</span>
-        <h2 id="t-shots">Clair, lisible, sans complication</h2>
-        <p>Illustrations des fonctions de l’application. Certaines sont réservées à Premium.</p>
+      <div class="center"><span class="kicker">Gratuit ou Premium</span><h2 id="t-comparatif">Ce qui change<br>avant de prendre la route.</h2><p>Commencez gratuitement. Choisissez Premium pour voir venir les averses plus loin et recevoir des alertes à votre position exacte.</p></div>
+      <div class="cmp-wrap">
+        <table class="cmp">
+          <caption class="sr">Comparatif des fonctions gratuites et Premium de Rain Info by Auto Plus</caption>
+          <colgroup><col class="c-feat"><col class="c-free"><col class="c-pro"></colgroup>
+          <thead><tr><th scope="col">Vos informations météo</th><th scope="col" class="free">Gratuit</th><th scope="col" class="pro"><em>En option</em>Premium</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Pluie à la minute<span>Choisir son départ ou sa pause</span></th><td>60 minutes</td><td class="pro">Jusqu’à 4 heures</td></tr>
+            <tr><th scope="row">Alertes de pluie<span>Préparer sa tenue avant l’averse</span></th><td>Pour votre ville</td><td class="pro">À votre position exacte</td></tr>
+            <tr><th scope="row">Radar animé<span>Voir les averses approcher</span></th><td>Non inclus</td><td class="pro">Jusqu’à 2 h d’avance</td></tr>
+            <tr><th scope="row">Prévisions météo<span>Planifier ses prochaines sorties</span></th><td>7 jours</td><td class="pro">Jusqu’à 30 jours*</td></tr>
+            <tr><th scope="row">Météo heure par heure<span>Repérer un créneau pour rouler</span></th><td>Non inclus</td><td class="pro">4 jours</td></tr>
+            <tr><th scope="row">Publicité<span>Consulter l’app sans interruption</span></th><td>Oui</td><td class="pro">Non</td></tr>
+          </tbody>
+        </table>
       </div>
-      <div class="gallery">
-
-        <figure class="shot">
-          <div class="phone mini" role="img" aria-label="Écran radar : carte avec les zones de pluie colorées selon leur force et une barre pour voir l'évolution dans l'heure.">
-            <div class="screen" aria-hidden="true">
-              <div class="notch"></div>
-              <div class="map"></div>
-              <div class="cloud c1"></div>
-              <div class="cloud c2"></div>
-              <div class="me"></div>
-              <div class="legend"><span style="--c:var(--rain1)">Faible</span><span style="--c:var(--rain2)">Modérée</span><span style="--c:var(--rain3)">Forte</span></div>
-              <div class="timeline"><b>Radar · 14 h 20</b><div class="track"><i></i></div><div class="lbl"><span>14 h</span><span>14 h 30</span><span>15 h</span></div></div>
-            </div>
-          </div>
-          <figcaption>Le radar animé<span>La pluie qui avance · Premium</span></figcaption>
-        </figure>
-
-        <figure class="shot">
-          <div class="phone mini" role="img" aria-label="Écran de verrouillage avec trois notifications Rain Info by Auto Plus : pluie dans 10 minutes, fin de la pluie à 15 h 40, orage prévu ce soir.">
-            <div class="screen" aria-hidden="true">
-              <div class="notch"></div>
-              <div class="lock">
-                <div class="clock">14:02</div>
-                <div class="date">lundi 2 novembre</div>
-                <div class="nt"><i>🌧️</i><div><b>Pluie dans 10 min</b><small>Rain Info <span class="brand-by">by Auto Plus</span> · maintenant</small>Pluie modérée chez vous à 14 h 12.</div></div>
-                <div class="nt"><i>🌤️</i><div><b>Fin de la pluie à 15 h 40</b><small>Rain Info <span class="brand-by">by Auto Plus</span> · il y a 2 min</small>Le temps de ressortir après.</div></div>
-                <div class="nt"><i>⛈️</i><div><b>Orage ce soir</b><small>Rain Info <span class="brand-by">by Auto Plus</span> · ce matin</small>Vers 21 h. Pensez à vos déplacements.</div></div>
-              </div>
-            </div>
-          </div>
-          <figcaption>Les alertes<span>Préparez votre équipement avant de partir</span></figcaption>
-        </figure>
-
-        <figure class="shot">
-          <div class="phone mini" role="img" aria-label="Écran des prévisions horaires : graphique de pluie heure par heure et résumé : pluie cet après-midi, sec demain matin.">
-            <div class="screen" aria-hidden="true">
-              <div class="notch"></div>
-              <div class="scr-pad">
-                <div><div class="scr-h">Météo heure par heure</div><div class="scr-s">Chez vous</div></div>
-                <div class="tile">
-                  <div class="hours">
-                    <span style="height:5%"></span><span style="height:10%"></span><span style="height:35%"></span><span style="height:80%"></span><span style="height:95%"></span><span style="height:60%"></span><span style="height:25%"></span><span style="height:5%"></span><span style="height:3%"></span><span style="height:3%"></span><span style="height:3%"></span><span style="height:8%"></span><span style="height:20%"></span><span style="height:45%"></span><span style="height:30%"></span><span style="height:10%"></span>
-                  </div>
-                  <div class="hlbl"><span>Auj.</span><span>Ce soir</span><span>Demain</span></div>
-                </div>
-                <div class="tile">☔ <b>Cet après-midi</b><br><span class="scr-s">Pluie de 14 h à 16 h</span></div>
-                <div class="tile">☀️ <b>Demain matin</b><br><span class="scr-s">Temps sec pour vos déplacements</span></div>
-              </div>
-            </div>
-          </div>
-          <figcaption>Les prévisions horaires<span>Jusqu’à 4 jours · Premium</span></figcaption>
-        </figure>
-
-        <figure class="shot">
-          <div class="phone mini" role="img" aria-label="Écran des prévisions étendues : liste des jours avec icône météo, risque de pluie et températures.">
-            <div class="screen" aria-hidden="true">
-              <div class="notch"></div>
-              <div class="scr-pad">
-                <div><div class="scr-h">Prévisions étendues</div><div class="scr-s">Risque de pluie · températures</div></div>
-                <div class="tile" style="padding:4px 10px">
-                  <div class="row"><span class="d">Lun.</span><span>🌧️</span><span class="p">80 %</span><span class="t">8° / 13°</span></div>
-                  <div class="row"><span class="d">Mar.</span><span>🌦️</span><span class="p">40 %</span><span class="t">7° / 12°</span></div>
-                  <div class="row"><span class="d">Mer.</span><span>☀️</span><span class="p">5 %</span><span class="t">6° / 14°</span></div>
-                  <div class="row"><span class="d">Jeu.</span><span>⛅</span><span class="p">15 %</span><span class="t">7° / 13°</span></div>
-                  <div class="row"><span class="d">Ven.</span><span>🌧️</span><span class="p">70 %</span><span class="t">9° / 12°</span></div>
-                  <div class="row"><span class="d">Sam.</span><span>⛅</span><span class="p">20 %</span><span class="t">8° / 15°</span></div>
-                  <div class="row"><span class="d">Dim.</span><span>☀️</span><span class="p">5 %</span><span class="t">6° / 16°</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <figcaption>Les jours à venir<span>Pour préparer vos sorties</span></figcaption>
-        </figure>
-
-      </div>
-      <p class="swipe" aria-hidden="true">← Faites glisser pour voir les autres écrans →</p>
+      <p class="comparison-note">*Les horizons peuvent varier selon la plateforme et la version. Premium comprend aussi les widgets et Live Activity sur iPhone compatible.</p>
+      <div class="comparison-actions"><a class="btn" href="#telecharger">Télécharger gratuitement</a><a class="premium-link" href="#abonnement">Choisir Premium</a></div>
     </div>
   </section>
-
-
-
-
-
-
 
   <section id="abonnement" aria-labelledby="t-abo">
     <div class="wrap">
@@ -501,7 +415,7 @@ footer a{color:var(--muted);margin:0 .4em}
 </div>
 <footer>
   <div class="wrap">
-    <img class="publisher-logo footer-publisher" src="assets/auto-plus.jpg" width="120" height="120" alt="Auto Plus" loading="lazy">
+    <img class="publisher-logo footer-publisher" src="assets/auto-plus-hd-v2.jpg" width="120" height="120" alt="Auto Plus" loading="lazy">
     <p class="footer-signature">Le service météo d’Auto Plus</p>
     <p>© 2026 Rain Info <span class="brand-by">by Auto Plus</span></p>
     <p><a href="#">Mentions légales</a> · <a href="#">Conditions de vente</a> · <a href="#">Confidentialité</a> · <a href="#">Contact</a></p>
