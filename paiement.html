@@ -124,8 +124,8 @@ footer a{color:var(--muted)}
               <input type="radio" name="plan" value="annuel" checked>
               <span class="tag">Le plus avantageux</span>
               <b>Un an</b>
-              <span class="pr">19,99 €</span>
-              <small>Soit 1,67 € par mois</small>
+              <span class="pr">16,99 €</span>
+              <small>Soit 1,42 € par mois</small>
             </label>
             <label class="plan">
               <input type="radio" name="plan" value="mensuel">
@@ -166,7 +166,7 @@ footer a{color:var(--muted)}
         <h2 id="t-sum">Récapitulatif</h2>
         <div class="line"><span>Formule</span><b id="s-plan">Un an</b></div>
         <div class="line"><span>Renouvellement</span><span id="s-renew">Chaque année</span></div>
-        <div class="line total"><span>À payer aujourd'hui</span><span id="s-price">19,99 €</span></div>
+        <div class="line total"><span>À payer aujourd'hui</span><span id="s-price">16,99 €</span></div>
         <ul class="incl">
           <li>Alertes à votre position exacte</li>
           <li>Radar animé, jusqu’à 2 h d’avance</li>
@@ -197,7 +197,7 @@ footer a{color:var(--muted)}
    L'e-mail saisi sera pré-rempli chez Stripe via ?prefilled_email=. */
 const PAYMENT_LINKS = { annuel: "", mensuel: "" };
 const PLANS = {
-  annuel:  { nom: "Un an",   prix: "19,99 €", renew: "Chaque année" },
+  annuel:  { nom: "Un an",   prix: "16,99 €", renew: "Chaque année" },
   mensuel: { nom: "Un mois", prix: "1,99 €",  renew: "Chaque mois" }
 };
 

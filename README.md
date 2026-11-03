@@ -27,8 +27,8 @@ Auto Plus utilise maintenant le logo haute définition fourni par Reworld Media 
 
 - Aperçu local : `python3 -m http.server 8000` puis http://localhost:8000
 - Paiement : `paiement.html` (nom, e-mail, formule, CGV). Renseigner les Stripe Payment Links dans `PAYMENT_LINKS` de `paiement.html` ; sans lien, rien n est envoyé ni enregistré.
-- Prix : 1,99 €/mois (confirmé par Claire le 2026-11-02) ; 19,99 €/an (provisoire, à confirmer).
-- Reste à faire : prix définitifs, liens Stripe, liens App Store / Google Play, pages légales.
+- Prix : 1,99 €/mois ; 16,99 €/an (confirmé par Claire le 03/11/2026 pour les trois sites), soit 1,42 €/mois arrondi pour la formule annuelle. Prix affichés et récapitulatifs des six pages mis à jour.
+- Reste à faire hors présentation : liens Stripe et pages légales. Les liens App Store / Google Play sont renseignés.
 
 ## Identité et usages — 03/11/2026
 

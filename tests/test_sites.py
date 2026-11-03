@@ -89,7 +89,10 @@ class SiteTests(unittest.TestCase):
                         self.assertFalse(any(tag == "img" and "publisher-logo" in attrs.get("class", "")
                                              for tag, attrs in Document(ROOT / version / name).nodes))
                     self.assertNotIn("<", title)
-                    self.assertIn("19,99 €", source)
+                    self.assertIn("16,99 €", source)
+                    self.assertIn("1,42 €", source)
+                    self.assertNotIn("19,99 €", source)
+                    self.assertNotIn("1,67 €", source)
                     self.assertIn("1,99 €", source)
                     other = "Maison et Jardin" if version == "auto-plus" else "Auto Plus"
                     self.assertNotIn(other, source)
