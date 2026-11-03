@@ -76,12 +76,18 @@ class SiteTests(unittest.TestCase):
 
     def test_brand_names_do_not_leak_to_another_version(self):
         for version, brand in (("", "Maison et Jardin"), ("auto-plus", "Auto Plus"),
-                               ("bleu", "Maison et Jardin")):
+                               ("bleu", None)):
             for name in PAGES:
                 with self.subTest(version=version, page=name):
                     source = (ROOT / version / name).read_text()
                     title = re.search(r"<title>(.*?)</title>", source, re.S).group(1)
-                    self.assertIn("Rain Info by " + brand, title)
+                    if brand:
+                        self.assertIn("Rain Info by " + brand, title)
+                    else:
+                        self.assertTrue(title.startswith("Rain Info"))
+                        self.assertNotRegex(source.lower(), r"maison|jardin")
+                        self.assertFalse(any(tag == "img" and "publisher-logo" in attrs.get("class", "")
+                                             for tag, attrs in Document(ROOT / version / name).nodes))
                     self.assertNotIn("<", title)
                     self.assertIn("19,99 €", source)
                     self.assertIn("1,99 €", source)
@@ -97,8 +103,8 @@ class SiteTests(unittest.TestCase):
                 actual = hashlib.sha256((ROOT / "bleu" / name).read_bytes()).hexdigest()
                 self.assertEqual(actual, expected, "The preserved blue version changed")
 
-    def test_blue_authorized_freemium_changes_are_preserved(self):
-        checksums = json.loads((ROOT / "tests" / "blue-freemium-20261103-sha256.json").read_text())
+    def test_blue_authorized_free_download_and_unbranding_are_preserved(self):
+        checksums = json.loads((ROOT / "tests" / "blue-rain-info-20261103-sha256.json").read_text())
         for name, expected in checksums.items():
             with self.subTest(file=name):
                 self.assertEqual(hashlib.sha256((ROOT / "bleu" / name).read_bytes()).hexdigest(), expected)

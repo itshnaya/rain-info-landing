@@ -17,7 +17,7 @@ Page d'accueil FR de l'application Rain Info by Maison et Jardin (alertes pluie 
 
 Chaque version possède sa propre page de paiement et ses propres styles. Aucun lien de paiement ne renvoie vers une autre version. Le dépôt et la publication GitHub Pages sont communs.
 
-La copie bleue conserve l'identité visuelle du commit `8273167`, avec le petit logo et la mention « by Maison et Jardin ». Le 03/11/2026, la demande explicite de téléchargement gratuit sur les trois sites autorise l'ajout des liens des stores, la correction du comparatif freemium et une sortie gratuite depuis le paiement. Son logo et sa feuille `assets/brand.css` restent identiques au commit d'origine.
+La copie bleue conserve la palette et les styles du commit `8273167`. À la demande de Claire le 03/11/2026, le logo et toutes les mentions Maison et Jardin sont retirés de l'accueil et du paiement : cette version porte uniquement le nom Rain Info. Les liens de téléchargement gratuit et la sortie gratuite depuis le paiement sont conservés. Les anciens fichiers de marque restent non référencés, pour les pages en cache ; les pages actuelles ne les chargent plus.
 
 Le logo Auto Plus est celui fourni sur la page partenaire du Mondial de l'Auto 2026 : https://mondial.paris/partenaires/auto-plus ; fichier https://mondial.paris/wp-content/uploads/salons-pms/2026/06/logo-autoplus-150.jpg. Le rouge `#ca2835` est extrait de ce logo. L'accès automatique au site Auto Plus étant refusé, cette variante ne prétend pas reproduire sa feuille de styles exacte.
 
