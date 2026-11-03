@@ -36,8 +36,8 @@ Maison et Jardin présente les usages au jardin et à la maison : décider d'arr
 
 Auto Plus présente la préparation des trajets à moto, avec un exemple de début de pluie dans 12 minutes, intensité modérée et fin prévue à 08 h 45. Ce visuel est clairement illustratif, sans météo en direct ni calcul d'itinéraire.
 
-- Styles propres à chaque version : `assets/garden.css` et `auto-plus/assets/compact.css`. Auto Plus a été raccourci à la demande de Claire : tableau et répétitions retirés, textes noirs, téléchargement gratuit et Premium facultatif. Les anciens styles restent disponibles pour les pages en cache et le paiement.
-- Visuels actifs : `assets/jardin-avant-pluie-v1.jpg` pour Maison et Jardin ; `auto-plus/assets/trajet-moto-averse-v1.jpg` pour Auto Plus. Enregistrement JPEG pour réduire le poids de chargement, sans retouche de la scène.
+- Styles propres à chaque version : `assets/garden.css` et, pour le retour Auto Plus à sa première version (`1096b00`), `auto-plus/assets/brand.css` et `auto-plus/assets/v1-return.css`. Le grand logo centré, le téléphone radar et les cartes V1 sont repris ; le téléchargement gratuit, les textes noirs et les informations produit vérifiées sont conservés. Tableau et répétitions retirés. Les anciennes compositions restent disponibles pour les pages en cache.
+- Visuel actif : `assets/jardin-avant-pluie-v1.jpg` pour Maison et Jardin. Auto Plus utilise à nouveau les illustrations de téléphone en HTML/CSS de la V1. L'ancienne photo `auto-plus/assets/trajet-moto-averse-v1.jpg` reste archivée. Les JPEG ont été enregistrés sans retouche de la scène.
 - Création : outil intégré `image_gen` (mode par défaut de la compétence imagegen), sans appel CLI ni nouvelle clé API. Image d'illustration générée, sans marque ni personnage réel identifié ; l'alerte en surimpression est explicitement présentée comme un exemple.
 - Original conservé dans le dossier des images générées de cette conversation : `exec-4e56c5d6-7ab0-4a75-b077-925d2cfdc31f.png`.
 
